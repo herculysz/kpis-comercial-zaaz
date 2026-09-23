@@ -1,0 +1,14 @@
+relationship 0a1f5e62-aca2-5208-27cf-80e229bc24b9
+	isActive: false
+	fromColumn: 'mvp solicitacao_servicos'.data_fechamento
+	toColumn: dim_calendario.data
+
+relationship ce734884-7914-2d02-cbb8-ba1252f7a219
+	fromColumn: 'mvp base_clientes'.data_venda
+	toColumn: dim_calendario.data
+
+relationship 9383411b-b9b7-5133-e500-44beb0ac375f
+	isActive: false
+	fromColumn: 'mvp solicitacao_servicos'.data_abertura
+	toColumn: dim_calendario.data
+

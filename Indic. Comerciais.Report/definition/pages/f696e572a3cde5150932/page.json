@@ -1,0 +1,49 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "f696e572a3cde5150932",
+  "displayName": "Analítico",
+  "displayOption": "FitToPage",
+  "height": 1080,
+  "width": 1920,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "14515a4e530deb840d69",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Vendas"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "fbc06e1a763e0e84be53",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "68186ea25ec43327e810",
+        "boundFilter": "14515a4e530deb840d69",
+        "asAggregation": false,
+        "qnaSingleSelectRequired": false,
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Vendas"
+          }
+        }
+      }
+    ]
+  }
+}

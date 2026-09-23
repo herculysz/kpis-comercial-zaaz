@@ -1,0 +1,6 @@
+EVALUATE
+
+--DISTINCT('mvp base_clientes'[estagio])
+--DISTINCT('mvp base_clientes'[status])
+DISTINCT('mvp solicitacao_servicos'[status])
+

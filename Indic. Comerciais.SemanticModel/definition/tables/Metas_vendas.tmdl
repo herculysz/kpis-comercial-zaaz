@@ -1,0 +1,111 @@
+table Metas_vendas
+	lineageTag: 0d4b0d90-2059-454d-99a9-16c39d03c993
+
+	column Empresa
+		lineageTag: c190919b-6f72-4c16-9a64-ad961eded7aa
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Empresa]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estado
+		lineageTag: 34e549e1-e3db-4347-afe5-cfad430c2528
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Estado]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cidade
+		lineageTag: 6b7b83ba-60ef-4769-889a-b1ffbdd89c2b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Cidade]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Meta
+		formatString: 0
+		lineageTag: f1857cb7-7fbc-4d19-bc27-df292e388510
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Meta]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Região
+		lineageTag: 6f781258-eb30-4468-a7da-d1580e16a56c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Região]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Metas_vendas = calculated
+		mode: import
+		source =
+				
+				
+				DATATABLE(
+				    "Empresa", STRING,
+				    "Região", STRING,
+				    "Estado", STRING,
+				    "Cidade", STRING,
+				    "Meta", INT64,
+				
+				    {
+				        {"ZAAZ SUL/SUDESTE", "MG01", "MG", "BAEPENDI", 86},
+				        {"ZAAZ SUL/SUDESTE", "MG02", "MG", "SANTA RITA", 194},
+				        {"ZAAZ SUL/SUDESTE", "MG03", "MG", "OURO FINO", 630},
+				
+				        {"ZAAZ SUL/SUDESTE", "PR01", "PR", "IBAITI", 314},
+				        {"ZAAZ SUL/SUDESTE", "PR02", "PR", "GOIOERÊ", 229},
+				        {"ZAAZ SUL/SUDESTE", "PR02", "PR", "LONDRINA", 974},
+				        {"ZAAZ SUL/SUDESTE", "PR02", "PR", "STO ANT PLATINA", 410},
+				
+				        {"ZAAZ SUL/SUDESTE", "SP01", "SP", "METROPOLITANA 1", 329},
+				        {"ZAAZ SUL/SUDESTE", "SP01", "SP", "METROPOLITANA 2", 511},
+				        {"ZAAZ SUL/SUDESTE", "SP02", "SP", "AVARÉ", 424},
+				        {"ZAAZ SUL/SUDESTE", "SP03", "SP", "TAQUARITUBA", 261},
+				        {"ZAAZ SUL/SUDESTE", "SP04", "SP", "ITAPEVA", 346},
+				        {"ZAAZ SUL/SUDESTE", "SP05", "SP", "CONCHAS", 212},
+				        {"ZAAZ SUL/SUDESTE", "SP05", "SP", "LARANJAL PTA", 230},
+				        {"ZAAZ SUL/SUDESTE", "SP06", "SP", "BOITUVA", 287},
+				        {"ZAAZ SUL/SUDESTE", "SP07", "SP", "METROPOLITANA 3", 295},
+				        -------------------------------------------------------------------
+				        {"ZAAZ NORDESTE", "BA01", "BA", "REGIONAL CAPIM GROSSO", 408},
+				        {"ZAAZ NORDESTE", "BA02", "BA", "REGIONAL JACOBINA", 688},
+				
+				        {"ZAAZ NORDESTE", "CE01", "CE", "REGIONAL CEARÁ", 0},
+				
+				        {"ZAAZ NORDESTE", "PB01", "PB", "REGIONAL CG/GUARABIRA", 1593},
+				        {"ZAAZ NORDESTE", "PB02", "PB", "REGIONAL MONTEIRO/PICUÍ", 367},
+				        {"ZAAZ NORDESTE", "PB03", "PB", "REGIONAL SANTA LUZIA/SJRP", 310},
+				
+				        {"ZAAZ NORDESTE", "PE01", "PE", "REGIONAL LAJEDO", 374},
+				
+				        {"ZAAZ NORDESTE", "RN01", "RN", "REGIONAL MACAU/TOUROS", 375},
+				        {"ZAAZ NORDESTE", "RN02", "RN", "REGIONAL NATAL", 1126},
+				        {"ZAAZ NORDESTE", "RN03", "RN", "REGIONAL PARELHAS/CAICÓ", 305},
+				        -------------------------------------------------------------------
+				        {"ZAAZ NORTE", "CE02", "CE", "CENTRAL/NORTE", 220},
+				        {"ZAAZ NORTE", "CE03", "CE", "IBIAPABA", 192},
+				        {"ZAAZ NORTE", "CE04", "CE", "INHAMUS", 139},
+				        {"ZAAZ NORTE", "CE05", "CE", "LITORAL", 242},
+				        {"ZAAZ NORTE", "CE06", "CE", "SERTÃO", 142},
+				
+				        {"ZAAZ NORTE", "MA01", "MA", "MARANHÃO", 314},
+				
+				        {"ZAAZ NORTE", "PA01", "PA", "REGIONAL 1", 490},
+				        {"ZAAZ NORTE", "PA02", "PA", "REGIONAL 2", 410},
+				        {"ZAAZ NORTE", "PA03", "PA", "REGIONAL 3", 520},
+				        {"ZAAZ NORTE", "PA04", "PA", "REGIONAL 4", 258},
+				
+				        {"ZAAZ NORTE", "PI01", "PI", "PIAUÍ", 173}
+				
+				    }
+				)
+
+	annotation PBI_Id = 7e083a2be0104a998d5f3e5cc126c666
+
