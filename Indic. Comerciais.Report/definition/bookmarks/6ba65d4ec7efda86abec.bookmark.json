@@ -1,6 +1,6 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
-  "displayName": "Limpar Analítico",
+  "displayName": "Limpar Analítico - Vendas",
   "name": "6ba65d4ec7efda86abec",
   "options": {
     "targetVisualNames": []
@@ -30,27 +30,64 @@
           ]
         },
         "visualContainers": {
-          "cd90748081bb39909ac0": {
+          "26479907da730b08e0de": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "4e07fe82175705390774",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp base_clientes"
+                        }
+                      },
+                      "Property": "empresa"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
             "singleVisual": {
-              "visualType": "shape",
-              "objects": {}
-            }
-          },
-          "96b4658d0b75dcb90500": {
-            "singleVisual": {
-              "visualType": "shape",
-              "objects": {}
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp base_clientes"
+                        }
+                      },
+                      "Property": "empresa"
+                    }
+                  }
+                ]
+              }
             }
           },
           "2be428d753ebc17cc124": {
             "singleVisual": {
               "visualType": "image",
-              "objects": {}
-            }
-          },
-          "d3260671d979d0c00d99": {
-            "singleVisual": {
-              "visualType": "textbox",
               "objects": {}
             }
           },
@@ -60,29 +97,11 @@
               "objects": {}
             }
           },
-          "5940a4e92baa3e3b9260": {
-            "singleVisual": {
-              "visualType": "shape",
-              "objects": {}
-            }
-          },
-          "9641d9b626d81c5b04d1": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
-            }
-          },
-          "6651221ea00920187334": {
-            "singleVisual": {
-              "visualType": "shape",
-              "objects": {}
-            }
-          },
           "44e48c4f2039081287ad": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "58c90541a5702592bae1",
+                  "name": "cc203461894bb60b87c5",
                   "type": "Advanced",
                   "expression": {
                     "Aggregation": {
@@ -108,9 +127,15 @@
               "objects": {}
             }
           },
-          "a67713eac6463e03abbe": {
+          "5940a4e92baa3e3b9260": {
             "singleVisual": {
-              "visualType": "textbox",
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "6651221ea00920187334": {
+            "singleVisual": {
+              "visualType": "shape",
               "objects": {}
             }
           },
@@ -178,7 +203,7 @@
               },
               "byExpr": [
                 {
-                  "name": "ba4202d89e4a0299cd05",
+                  "name": "3232c59f33de1e230738",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -193,7 +218,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "04a471a1819165e30e0d",
+                  "name": "b7b2f67a0b17a80c4227",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -208,7 +233,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "159c02b0bb1abaa0357a",
+                  "name": "34d057e06e2252b44882",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -223,202 +248,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "5754538e1097e3d94ae6",
-                  "type": "Advanced",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp base_clientes"
-                        }
-                      },
-                      "Property": "credenciado_sky"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "b5173d37000577bc7516",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp base_clientes"
-                        }
-                      },
-                      "Property": "data_venda"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "52fb54845b095208d125",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp base_clientes"
-                        }
-                      },
-                      "Property": "grupo_produto"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "5447f9b4b7830b104c49",
-                  "type": "Advanced",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp base_clientes"
-                        }
-                      },
-                      "Property": "mvno"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "fe89d2e06dbdb6b8a23d",
-                  "type": "Advanced",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp base_clientes"
-                        }
-                      },
-                      "Property": "possui_streaming_sky"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "579b5058970926733412",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp base_clientes"
-                        }
-                      },
-                      "Property": "nome_cliente"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "5150e289260b59049116",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp base_clientes"
-                        }
-                      },
-                      "Property": "plano"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "9deb7dbb3ddc7b8e8d76",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp base_clientes"
-                        }
-                      },
-                      "Property": "status"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "3497801020d306c567e2",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp base_clientes"
-                        }
-                      },
-                      "Property": "estagio"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "8996f18089030e70d904",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp base_clientes"
-                        }
-                      },
-                      "Property": "tecnologia"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "5f7587fd466a3b43521c",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp base_clientes"
-                        }
-                      },
-                      "Property": "tipo_pessoa"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "951ef1a2430d467e8b78",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp base_clientes"
-                        }
-                      },
-                      "Property": "velocidade"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "443e8d21ca4e2d34298a",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp base_clientes"
-                        }
-                      },
-                      "Property": "vendedor"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "ec75b96617422c3acab0",
+                  "name": "15528e012e5c7e473c00",
                   "type": "Advanced",
                   "expression": {
                     "Column": {
@@ -433,7 +263,202 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "f5ded71d974ca99955a4",
+                  "name": "e61844a3e28116ace638",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp base_clientes"
+                        }
+                      },
+                      "Property": "data_venda"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "931306d551902d852e8a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp base_clientes"
+                        }
+                      },
+                      "Property": "vendedor"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9703d822e3cac0008095",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp base_clientes"
+                        }
+                      },
+                      "Property": "nome_cliente"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "02981d3b2a4c34a21486",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp base_clientes"
+                        }
+                      },
+                      "Property": "tipo_pessoa"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fa0ae56fb02162a68760",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp base_clientes"
+                        }
+                      },
+                      "Property": "grupo_produto"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3ecd8bbb3cbeb7000a30",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp base_clientes"
+                        }
+                      },
+                      "Property": "tecnologia"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ac528813b80e361be02a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp base_clientes"
+                        }
+                      },
+                      "Property": "plano"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "882e1489d06e460bbc2b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp base_clientes"
+                        }
+                      },
+                      "Property": "velocidade"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "eb011f3d3d7b008bb2e5",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp base_clientes"
+                        }
+                      },
+                      "Property": "estagio"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9c2604d8d75723d6e308",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp base_clientes"
+                        }
+                      },
+                      "Property": "status"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "574d2803a0bd216b6401",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp base_clientes"
+                        }
+                      },
+                      "Property": "mvno"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "73202ab68ee62201620c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp base_clientes"
+                        }
+                      },
+                      "Property": "credenciado_sky"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d8ab379c0075033ede0d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp base_clientes"
+                        }
+                      },
+                      "Property": "possui_streaming_sky"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3114a365d220c773da0b",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -454,59 +479,22 @@
               "objects": {}
             }
           },
-          "26479907da730b08e0de": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "bc49df86965a12300646",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp base_clientes"
-                        }
-                      },
-                      "Property": "empresa"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
+          "9641d9b626d81c5b04d1": {
             "singleVisual": {
-              "visualType": "slicer",
-              "objects": {
-                "merge": {
-                  "data": [
-                    {
-                      "properties": {
-                        "mode": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "'Dropdown'"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  ]
-                }
-              },
-              "activeProjections": {
-                "Values": [
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp base_clientes"
-                        }
-                      },
-                      "Property": "empresa"
-                    }
-                  }
-                ]
-              }
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "96b4658d0b75dcb90500": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "a67713eac6463e03abbe": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
             }
           },
           "cb0d8e0026399e9306a1": {
@@ -528,16 +516,16 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "43c39848e2548cad09ea",
+                  "name": "d236db8b390806929546",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "mvp base_clientes"
+                          "Entity": "dim_calendario"
                         }
                       },
-                      "Property": "data_venda"
+                      "Property": "data"
                     }
                   },
                   "howCreated": 0
@@ -548,6 +536,51 @@
               "visualType": "slicer",
               "objects": {
                 "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "d",
+                                "Entity": "dim_calendario",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "Comparison": {
+                                    "ComparisonKind": 0,
+                                    "Left": {
+                                      "Column": {
+                                        "Expression": {
+                                          "SourceRef": {
+                                            "Source": "d"
+                                          }
+                                        },
+                                        "Property": "data"
+                                      }
+                                    },
+                                    "Right": {
+                                      "DateSpan": {
+                                        "Expression": {
+                                          "Now": {}
+                                        },
+                                        "TimeUnit": 2
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
                   "data": [
                     {
                       "properties": {
@@ -570,10 +603,10 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "mvp base_clientes"
+                          "Entity": "dim_calendario"
                         }
                       },
-                      "Property": "data_venda"
+                      "Property": "data"
                     }
                   }
                 }
@@ -584,13 +617,150 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "mvp base_clientes"
+                          "Entity": "dim_calendario"
                         }
                       },
-                      "Property": "data_venda"
+                      "Property": "data"
                     }
                   }
                 ]
+              }
+            }
+          },
+          "cd90748081bb39909ac0": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "d3260671d979d0c00d99": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "3fc4aea82104078da06b": {
+            "singleVisual": {
+              "visualType": "pageNavigator",
+              "objects": {}
+            }
+          },
+          "e357b3f322ca69055284": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "588140264cab41062a63",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Parâmetro_vendas"
+                        }
+                      },
+                      "Property": "Parâmetro_vendas"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "p",
+                                "Entity": "Parâmetro_vendas",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "p"
+                                            }
+                                          },
+                                          "Property": "Parâmetro_vendas Campos"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'''Medidas''[Vendas]'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Parâmetro_vendas"
+                        }
+                      },
+                      "Property": "Parâmetro_vendas"
+                    }
+                  }
+                ]
+              },
+              "cachedFilterDisplayItems": [
+                {
+                  "id": {
+                    "scopeId": {
+                      "Comparison": {
+                        "ComparisonKind": 0,
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "Parâmetro_vendas"
+                              }
+                            },
+                            "Property": "Parâmetro_vendas Campos"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'''Medidas''[Vendas]'"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "displayName": "Vendas"
+                }
+              ],
+              "display": {
+                "mode": "hidden"
               }
             }
           }

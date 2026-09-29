@@ -1,0 +1,47 @@
+table Parâmetro_vendas
+	lineageTag: ca79c3dd-6330-4152-a89a-7362b496e887
+
+	column Parâmetro_vendas
+		lineageTag: 47b02d60-c796-49da-b2e6-fe04bf8602d9
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parâmetro_vendas Pedido'
+
+		relatedColumnDetails
+			groupByColumn: 'Parâmetro_vendas Campos'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parâmetro_vendas Campos'
+		isHidden
+		lineageTag: 2eac44e5-79f5-421c-9a58-c5345ca772f4
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parâmetro_vendas Pedido'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parâmetro_vendas Pedido'
+		isHidden
+		formatString: 0
+		lineageTag: 1d62efae-53b6-4f3a-b0e2-eb18bb48f4ee
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Parâmetro_vendas = calculated
+		mode: import
+		source =
+				{
+				    ("Vendas", NAMEOF('Medidas'[Vendas]), 0)
+				}
+
+	annotation PBI_Id = 62213deef2644575b9500525f4c24ade
+

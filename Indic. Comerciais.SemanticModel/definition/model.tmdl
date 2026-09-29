@@ -25,7 +25,10 @@ ref table Medidas
 ref table dim_calendario
 ref table fct_atualizado
 ref table 'mvp base_clientes'
-ref table Metas_vendas
+ref table Metas_vendas_bl
+ref table Metas_gross_bl
+ref table Parâmetro_ativação
+ref table Parâmetro_vendas
 
 ref cultureInfo pt-BR
 

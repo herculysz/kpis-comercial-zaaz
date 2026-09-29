@@ -1630,7 +1630,7 @@ table Medidas
 			) 
 			```
 		formatString: #,0
-		displayFolder: Vendas
+		displayFolder: Comercial\Vendas BL
 		lineageTag: db44d243-2d4a-45a5-9e8d-5f5b38934bd2
 
 	measure 'Proj. Vendas' = ```
@@ -1644,13 +1644,14 @@ table Medidas
 			            0
 			        )
 			```
-		displayFolder: Vendas
+		displayFolder: Comercial\Vendas BL
 		lineageTag: 06ffd8d1-9c3b-4d5b-a1ea-d3e1b62e5ba5
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Backlog Total Ativ' =
 			
+			VAR backlog =
 			CALCULATE(
 			    [Backlog Total],
 			    TREATAS(
@@ -1659,11 +1660,14 @@ table Medidas
 			        'mvp solicitacao_servicos'[cidade]
 			    )
 			)
+			RETURN
+			
+			IF([Vendas]> 0, backlog+0, BLANK())
 		formatString: 0
-		displayFolder: Vendas
+		displayFolder: Comercial\Vendas BL
 		lineageTag: ade321a5-2548-44ca-8b63-1eebe69aeffc
 
-	measure 'DIAS ESTOQUE' =
+	measure 'DIAS ESTOQUE_vendas' =
 			
 			/*
 			CALCULATE(
@@ -1681,7 +1685,7 @@ table Medidas
 			    [Media_du_PROD],
 			    0
 			)
-		displayFolder: Vendas
+		displayFolder: Comercial\Vendas BL
 		lineageTag: 31473203-809c-4514-b74b-4c42ef0c94f0
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -1697,7 +1701,7 @@ table Medidas
 			    )
 			```
 		formatString: 0
-		displayFolder: Vendas
+		displayFolder: Comercial\Vendas BL
 		lineageTag: babe6b14-5d3c-4693-80fe-8049e311c017
 
 		annotation PBI_FormatHint = {"isDecimal":true}
@@ -1725,7 +1729,7 @@ table Medidas
 			        ),
 			        [peso_dia_util_vendas] + [peso_sabado_vendas] + [peso_domingo_vendas] + [peso_feriado_vendas]
 			    )
-		displayFolder: Vendas\DiasUteisVendas
+		displayFolder: Comercial\Vendas BL\_DiasUteisVendas
 		lineageTag: e7cfa6ea-75ed-4161-8add-8c67a75acc8d
 
 		formatStringDefinition = "DU PLAN "&"0.00"
@@ -1744,7 +1748,7 @@ table Medidas
 			        1.00,
 			        0.00
 			    )
-		displayFolder: Vendas\DiasUteisVendas\pesos_vendas
+		displayFolder: Comercial\Vendas BL\_DiasUteisVendas\pesos_vendas
 		lineageTag: 6ff9a69b-8d9d-4ea4-99e9-91598fe6650e
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -1761,7 +1765,7 @@ table Medidas
 			        0.50,
 			        0.00
 			    )
-		displayFolder: Vendas\DiasUteisVendas\pesos_vendas
+		displayFolder: Comercial\Vendas BL\_DiasUteisVendas\pesos_vendas
 		lineageTag: 863826a1-01a4-4af8-a310-0833202f1b82
 
 	measure peso_domingo_vendas =
@@ -1777,7 +1781,7 @@ table Medidas
 			        0.00,
 			        0.00
 			    )
-		displayFolder: Vendas\DiasUteisVendas\pesos_vendas
+		displayFolder: Comercial\Vendas BL\_DiasUteisVendas\pesos_vendas
 		lineageTag: d92435c0-76c0-4c2a-bf90-f02e539e241f
 
 	measure peso_feriado_vendas =
@@ -1789,7 +1793,7 @@ table Medidas
 			    0.50,
 			    0.00
 			)
-		displayFolder: Vendas\DiasUteisVendas\pesos_vendas
+		displayFolder: Comercial\Vendas BL\_DiasUteisVendas\pesos_vendas
 		lineageTag: 4c4b968f-241c-413d-895e-2f3048855eb7
 
 	measure 'DU REAL_Vendas' =
@@ -1814,7 +1818,7 @@ table Medidas
 			        ),
 			        [peso_dia_util_vendas] + [peso_sabado_vendas] + [peso_domingo_vendas] + [peso_feriado_vendas]
 			    )
-		displayFolder: Vendas\DiasUteisVendas
+		displayFolder: Comercial\Vendas BL\_DiasUteisVendas
 		lineageTag: aab69e0f-24cd-4569-ab01-cf25059282f6
 
 		formatStringDefinition = "DU REAL "&"0.00"
@@ -1822,7 +1826,7 @@ table Medidas
 	measure @cor_back_dias_estoque = ```
 			
 			
-			VAR Taxa = [DIAS ESTOQUE]
+			VAR Taxa = [DIAS ESTOQUE_vendas]
 			VAR Meta = 2.5
 			VAR RedLight = Meta + 0.5 -- Meta + 0.05
 			RETURN
@@ -1830,19 +1834,19 @@ table Medidas
 			SWITCH(
 			    TRUE(),
 			    ISBLANK(Taxa), BLANK(),
-			    Taxa <= 0, BLANK(),
+			    Taxa < 0, BLANK(),
 			    Taxa <= Meta, "#B2D788",
 			    Taxa < RedLight, "#E5D38C", 
 			    "#E5B389"
 			)
 			```
-		displayFolder: Vendas\Cores
+		displayFolder: Comercial\Vendas BL\_Cores
 		lineageTag: 57ebcf3b-19af-4e00-96fb-dda6ce08ac44
 
 	measure @cor_txt_dias_estoque = ```
 			
 			
-			VAR Taxa = [DIAS ESTOQUE]
+			VAR Taxa = [DIAS ESTOQUE_vendas]
 			VAR Meta = 2.5
 			VAR RedLight = Meta + 0.5-- Meta + 0.05
 			RETURN
@@ -1850,13 +1854,13 @@ table Medidas
 			SWITCH(
 			    TRUE(),
 			    ISBLANK(Taxa), BLANK(),
-			    Taxa <= 0, BLANK(),
+			    Taxa < 0, BLANK(),
 			    Taxa <= Meta, "#1b6242",
 			    Taxa < RedLight, "#856c16", 
 			    "#7F0000"
 			)
 			```
-		displayFolder: Vendas\Cores
+		displayFolder: Comercial\Vendas BL\_Cores
 		lineageTag: efccbeb6-655c-4bff-9e9c-fbfa0daa1d2b
 
 	measure 'Meta Vendas' =
@@ -1864,11 +1868,11 @@ table Medidas
 			
 			
 			VAR meta = CALCULATE(
-			    SUM(Metas_vendas[Meta]),
+			    SUM(Metas_vendas_bl[Meta]),
 			    TREATAS(
 			        SUMMARIZE('mvp base_clientes', 'mvp base_clientes'[empresa], 'mvp base_clientes'[ajuste_uf]),
-			        Metas_vendas[Empresa],
-			        Metas_vendas[Estado]
+			        Metas_vendas_bl[Empresa],
+			        Metas_vendas_bl[Estado]
 			    )
 			)
 			
@@ -1876,10 +1880,10 @@ table Medidas
 			
 			IF( NOT(ISINSCOPE('mvp base_clientes'[ajuste_cidade])), meta, BLANK())
 		formatString: #,0
-		displayFolder: Vendas
+		displayFolder: Comercial\Vendas BL
 		lineageTag: fe8bc052-9ad7-4a99-87e7-e799e24e0223
 
-	measure '% COBERT Vendas' =
+	measure '% COBERT Vendas' = ```
 			
 			
 			VAR porcentagem = DIVIDE(
@@ -1889,9 +1893,15 @@ table Medidas
 			)
 			RETURN
 			
-			IF(porcentagem>0, porcentagem, BLANK())
+			--IF(porcentagem>0, porcentagem, BLANK())
+			IF(NOT(ISINSCOPE('mvp base_clientes'[ajuste_cidade])),
+			    IF([Vendas]>0, porcentagem, BLANK()),
+			    BLANK()
+			)
+			
+			```
 		formatString: 0.00%;-0.00%;0.00%
-		displayFolder: Vendas
+		displayFolder: Comercial\Vendas BL
 		lineageTag: 04628693-5c04-4f7f-b466-5598be652714
 
 	measure @cor_back_cobert_taxa =
@@ -1912,7 +1922,7 @@ table Medidas
 			    Taxa < Meta, "#E5D38C",
 			    "#B2D788"
 			)
-		displayFolder: Vendas\Cores
+		displayFolder: Comercial\Vendas BL\_Cores
 		lineageTag: 82705562-898d-4655-a31a-bbe27b4a697e
 
 	measure @cor_txt_cobert_taxa =
@@ -1933,8 +1943,221 @@ table Medidas
 			    Taxa < Meta, "#856c16",
 			    "#1b6242"
 			)
-		displayFolder: Vendas\Cores
+		displayFolder: Comercial\Vendas BL\_Cores
 		lineageTag: e9ff5831-8d36-4c30-bebf-8c9ff7e0b435
+
+	measure 'Proj. gross' = ```
+			
+			
+			        ROUND(
+			            DIVIDE(
+			                [PRODUTIVAS_GROSS_ATIV],
+			                [DU REAL_Vendas]
+			            ) * [DU PLAN_Vendas],
+			            0
+			        )
+			```
+		formatString: #,0
+		displayFolder: Comercial\Gross BL
+		lineageTag: 90331454-64cb-44df-aa46-0f7e185c4a1b
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Meta Gross' =
+			
+			
+			
+			VAR meta = CALCULATE(
+			    SUM(Metas_gross_bl[Meta]),
+			    TREATAS(
+			        SUMMARIZE('mvp solicitacao_servicos', 'mvp solicitacao_servicos'[empresa], 'mvp solicitacao_servicos'[uf_ajustada]),
+			        Metas_gross_bl[Empresa],
+			        Metas_gross_bl[Estado]
+			    )
+			)
+			
+			return
+			
+			IF( NOT(ISINSCOPE('mvp solicitacao_servicos'[cidade])), meta, BLANK())
+		formatString: #,0
+		displayFolder: Comercial\Gross BL
+		lineageTag: b853df2a-8d23-469e-9083-2cd44685dac7
+
+	measure '% COBERT Gross' =
+			
+			
+			VAR porcentagem = DIVIDE(
+			    [Proj. gross],
+			    [Meta Gross],
+			    0
+			)
+			RETURN
+			
+			--IF(porcentagem>0, porcentagem, BLANK())
+			IF(NOT(ISINSCOPE('mvp solicitacao_servicos'[cidade])),
+			    IF([PRODUTIVAS_GROSS_ATIV]>0, porcentagem, BLANK()),
+			    BLANK()
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Comercial\Gross BL
+		lineageTag: d68441a1-f2eb-49d3-b492-75aa366397c9
+
+	measure 'Backlog Gross BL' =
+			
+			
+			VAR backloggross = [Backlog Total]
+			
+			RETURN
+			
+			IF([PRODUTIVAS_GROSS_ATIV]>0, backloggross+0, BLANK())
+		formatString: 0
+		displayFolder: Comercial\Gross BL
+		lineageTag: 255c875f-5025-4094-af9e-a09ea61e4caa
+
+	measure 'Media DU PROD Gross' =
+			
+			
+			DIVIDE(
+			    [PRODUTIVAS_GROSS_ATIV],
+			    [DU REAL_Vendas],
+			    0
+			)
+		formatString: 0
+		displayFolder: Comercial\Gross BL
+		lineageTag: a62e3094-2eb5-4d91-a571-3edb95600fb9
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'DIAS ESTOQUE GROSS' =
+			
+			
+			DIVIDE(
+			    [Backlog Gross BL],
+			    [Media DU PROD Gross],
+			    0
+			)
+		formatString: 0.0
+		displayFolder: Comercial\Gross BL
+		lineageTag: d9b2ac34-44c6-4f20-8e2c-bffd2f1808cf
+
+	measure @cor_back_cobert_gross_taxa =
+			
+			
+			VAR Taxa = [% COBERT Gross]
+			VAR Meta = 1
+			VAR Yellow = Meta - 0.10
+			VAR Orange = Yellow - 0.10
+			RETURN
+			
+			SWITCH(
+			    TRUE(),
+			    ISBLANK(Taxa), BLANK(),
+			    Taxa < 0, BLANK(),
+			    Taxa < orange, "#e58989",
+			    Taxa < yellow, "#E5B389",
+			    Taxa < Meta, "#E5D38C",
+			    "#B2D788"
+			)
+		displayFolder: Comercial\Gross BL\Cores
+		lineageTag: 28263b8a-d83a-4f67-aa34-80e3f289e4e9
+
+	measure @cor_txt_cobert_gross_taxa =
+			
+			
+			VAR Taxa = [% COBERT Gross]
+			VAR Meta = 1
+			VAR Yellow = Meta - 0.10
+			VAR Orange = Yellow - 0.10
+			RETURN
+			
+			SWITCH(
+			    TRUE(),
+			    ISBLANK(Taxa), BLANK(),
+			    Taxa < 0, BLANK(),
+			    Taxa < orange, "#7F0000",
+			    Taxa < yellow, "#915811",
+			    Taxa < Meta, "#856c16",
+			    "#1b6242"
+			)
+		displayFolder: Comercial\Gross BL\Cores
+		lineageTag: 98506ace-b92b-4569-8337-04a5f9c98aae
+
+	measure @cor_back_dias_estoque_gross = ```
+			
+			
+			VAR Taxa = [DIAS ESTOQUE GROSS]
+			VAR Meta = 2.5
+			VAR RedLight = Meta + 0.5 -- Meta + 0.05
+			RETURN
+			
+			SWITCH(
+			    TRUE(),
+			    ISBLANK(Taxa), BLANK(),
+			    Taxa < 0, BLANK(),
+			    Taxa <= Meta, "#B2D788",
+			    Taxa < RedLight, "#E5D38C", 
+			    "#E5B389"
+			)
+			```
+		displayFolder: Comercial\Gross BL\Cores
+		lineageTag: 0e9099f8-0e08-4ab6-a5c6-1ae899915fdd
+
+	measure @cor_txt_dias_estoque_gross = ```
+			
+			
+			VAR Taxa = [DIAS ESTOQUE GROSS]
+			VAR Meta = 2.5
+			VAR RedLight = Meta + 0.5-- Meta + 0.05
+			RETURN
+			
+			SWITCH(
+			    TRUE(),
+			    ISBLANK(Taxa), BLANK(),
+			    Taxa < 0, BLANK(),
+			    Taxa <= Meta, "#1b6242",
+			    Taxa < RedLight, "#856c16", 
+			    "#7F0000"
+			)
+			```
+		displayFolder: Comercial\Gross BL\Cores
+		lineageTag: ebc27bf4-8ee4-46df-a48c-6a552a8e54be
+
+	measure 'DATA VENDA MAXMIN' = ```
+			
+			
+			VAR DataInicio = 
+			    CALCULATE(
+			        MIN('mvp base_clientes'[data_venda]),
+			        USERELATIONSHIP('dim_calendario'[data], 'mvp base_clientes'[data_venda])
+			    )
+			VAR DataFim = 
+			    CALCULATE(
+			        MAX('mvp base_clientes'[data_venda]),
+			        USERELATIONSHIP('dim_calendario'[data], 'mvp base_clientes'[data_venda])
+			    )
+			RETURN
+			    "De " & FORMAT(DataInicio, "dd/mm/yyyy") & " até " & FORMAT(DataFim, "dd/mm/yyyy")
+			```
+		displayFolder: Comercial\Vendas BL
+		lineageTag: 15ed934a-fae0-456c-b402-996eaa164e5a
+
+	measure 'DATA GROSS MAXMIN' = ```
+			
+			VAR DataInicio = 
+			    CALCULATE(
+			        MIN('mvp solicitacao_servicos'[data_fechamento]),
+			        USERELATIONSHIP('dim_calendario'[data], 'mvp solicitacao_servicos'[data_fechamento])
+			    )
+			VAR DataFim = 
+			    CALCULATE(
+			        MAX('mvp solicitacao_servicos'[data_fechamento]),
+			        USERELATIONSHIP('dim_calendario'[data], 'mvp solicitacao_servicos'[data_fechamento])
+			    )
+			RETURN
+			    "De " & FORMAT(DataInicio, "dd/mm/yyyy") & " até " & FORMAT(DataFim, "dd/mm/yyyy")
+			```
+		displayFolder: Comercial\Gross BL
+		lineageTag: bc6c572a-9d6e-4fb5-b3f6-7cf7ce001034
 
 	partition Medidas = m
 		mode: import

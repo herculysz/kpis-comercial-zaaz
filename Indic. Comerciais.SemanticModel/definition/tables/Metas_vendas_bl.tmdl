@@ -1,4 +1,4 @@
-table Metas_vendas
+table Metas_vendas_bl
 	lineageTag: 0d4b0d90-2059-454d-99a9-16c39d03c993
 
 	column Empresa
@@ -42,7 +42,7 @@ table Metas_vendas
 
 		annotation SummarizationSetBy = Automatic
 
-	partition Metas_vendas = calculated
+	partition Metas_vendas_bl = calculated
 		mode: import
 		source =
 				

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "ee66b4d7002501dfefe9",
   "position": {
-    "x": 526.046511627907,
-    "y": 126.97674418604652,
+    "x": 292.027074226029,
+    "y": 134.35265562137786,
     "z": 2000,
     "height": 897.20930232558135,
-    "width": 883.25581395348831,
+    "width": 802.32558139534888,
     "tabOrder": 1000
   },
   "visual": {
@@ -148,11 +148,12 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "DIAS ESTOQUE"
+                  "Property": "DIAS ESTOQUE_vendas"
                 }
               },
               "queryRef": "Medidas.Prod. Bruta Vendas",
-              "nativeQueryRef": "DIAS ESTOQUE"
+              "nativeQueryRef": "DIAS ESTOQUE",
+              "displayName": "DIAS ESTOQUE"
             },
             {
               "field": {
@@ -778,7 +779,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'VENDAS'"
+                  "Value": "'VENDAS BL'"
                 }
               }
             },
@@ -908,7 +909,21 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'(PRODUÇÃO)'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
                 }
               }
             }
@@ -1139,90 +1154,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "d99cd55e108b0023c108",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "mvp base_clientes"
-              }
-            },
-            "Property": "empresa"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "0e52554d4d1d455b771b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "mvp base_clientes"
-              }
-            },
-            "Property": "ajuste_uf"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "63f6d06731750abca162",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "mvp base_clientes"
-              }
-            },
-            "Property": "ajuste_cidade"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "0c728efc17a93a0d971b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Proj. Vendas"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "bef4754a096c4054a222",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Backlog Total Ativ"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "207b27d4576a28b00154",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "DIAS ESTOQUE"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }
