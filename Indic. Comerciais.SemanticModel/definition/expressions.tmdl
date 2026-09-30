@@ -6,7 +6,7 @@ expression host = "177.13.0.39:5432" meta [IsParameterQuery=true, List={"10.11.1
 
 	annotation PBI_ResultType = Text
 
-expression database = "dw_empresa" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+expression database = "dw_empresa" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: f7fa7f04-1666-40fb-8738-a34df8e49812
 	queryGroup: Parametros
 

@@ -34,7 +34,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "4e07fe82175705390774",
+                  "name": "fa492cc0980176e6be1b",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -97,11 +97,17 @@
               "objects": {}
             }
           },
+          "3fc4aea82104078da06b": {
+            "singleVisual": {
+              "visualType": "pageNavigator",
+              "objects": {}
+            }
+          },
           "44e48c4f2039081287ad": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "cc203461894bb60b87c5",
+                  "name": "a14f2c05eee9205b66a0",
                   "type": "Advanced",
                   "expression": {
                     "Aggregation": {
@@ -199,11 +205,60 @@
                     }
                   },
                   "howCreated": 1
+                },
+                "9207643e03d8ab7d1e73": {
+                  "name": "9207643e03d8ab7d1e73",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "m1",
+                        "Entity": "Medidas",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 1,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "m1"
+                                  }
+                                },
+                                "Property": "Vendas"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "0L"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Medidas"
+                        }
+                      },
+                      "Property": "Vendas"
+                    }
+                  },
+                  "howCreated": 0
                 }
               },
               "byExpr": [
                 {
-                  "name": "3232c59f33de1e230738",
+                  "name": "0525a106c56d63cd74a4",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -218,7 +273,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "b7b2f67a0b17a80c4227",
+                  "name": "5fc4161a4706c23d6c80",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -233,7 +288,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "34d057e06e2252b44882",
+                  "name": "0255a1d3db0c49464e6b",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -248,7 +303,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "15528e012e5c7e473c00",
+                  "name": "a1abc61c30008ad29685",
                   "type": "Advanced",
                   "expression": {
                     "Column": {
@@ -263,7 +318,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "e61844a3e28116ace638",
+                  "name": "2bba41014be82e00acc4",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -278,7 +333,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "931306d551902d852e8a",
+                  "name": "94911002b545856102a7",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -293,7 +348,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "9703d822e3cac0008095",
+                  "name": "d47f867a6aac00962a20",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -308,7 +363,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "02981d3b2a4c34a21486",
+                  "name": "c762411b868c28c1c043",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -323,7 +378,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "fa0ae56fb02162a68760",
+                  "name": "d111fe41ad683d11d552",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -338,7 +393,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "3ecd8bbb3cbeb7000a30",
+                  "name": "fd23f7e000b03d9b3030",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -353,7 +408,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "ac528813b80e361be02a",
+                  "name": "ae383db3a8008d240999",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -368,7 +423,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "882e1489d06e460bbc2b",
+                  "name": "70dc304e607de314e0ac",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -383,7 +438,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "eb011f3d3d7b008bb2e5",
+                  "name": "394998a4228a76c0e955",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -398,7 +453,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "9c2604d8d75723d6e308",
+                  "name": "b434d3e5ca30dba517e3",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -413,7 +468,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "574d2803a0bd216b6401",
+                  "name": "19c8b87a33b906491eea",
                   "type": "Advanced",
                   "expression": {
                     "Column": {
@@ -428,7 +483,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "73202ab68ee62201620c",
+                  "name": "1f39f11445e084957b81",
                   "type": "Advanced",
                   "expression": {
                     "Column": {
@@ -443,7 +498,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "d8ab379c0075033ede0d",
+                  "name": "282ff12e74a2008bee7d",
                   "type": "Advanced",
                   "expression": {
                     "Column": {
@@ -453,21 +508,6 @@
                         }
                       },
                       "Property": "possui_streaming_sky"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "3114a365d220c773da0b",
-                  "type": "Advanced",
-                  "expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Medidas"
-                        }
-                      },
-                      "Property": "Vendas"
                     }
                   },
                   "howCreated": 0
@@ -516,7 +556,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "d236db8b390806929546",
+                  "name": "a2b2903575077e3c0b01",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -624,6 +664,9 @@
                     }
                   }
                 ]
+              },
+              "display": {
+                "mode": "hidden"
               }
             }
           },
@@ -639,17 +682,11 @@
               "objects": {}
             }
           },
-          "3fc4aea82104078da06b": {
-            "singleVisual": {
-              "visualType": "pageNavigator",
-              "objects": {}
-            }
-          },
           "e357b3f322ca69055284": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "588140264cab41062a63",
+                  "name": "ad6f9e00c294975b07cd",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -775,7 +812,7 @@
               "expanded": {
                 "expr": {
                   "Literal": {
-                    "Value": "false"
+                    "Value": "true"
                   }
                 }
               }

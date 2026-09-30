@@ -4,7 +4,7 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 349.86807387862768,
+        "x": 800.25989445910307,
         "y": 0
       },
       "nodes": [
@@ -104,6 +104,19 @@
           },
           "nodeIndex": "Parâmetro_ativação",
           "nodeLineageTag": "cf1b669a-ce91-49b2-9636-2bd5213ee958",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1841,
+            "y": 394.83575197889189
+          },
+          "nodeIndex": "Parâmetro_vendas",
+          "nodeLineageTag": "ca79c3dd-6330-4152-a89a-7362b496e887",
           "size": {
             "height": 152,
             "width": 234

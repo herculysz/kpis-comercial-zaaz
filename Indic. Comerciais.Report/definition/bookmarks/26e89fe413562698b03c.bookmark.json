@@ -3,9 +3,7 @@
   "displayName": "Limpar Analítico - Gross",
   "name": "26e89fe413562698b03c",
   "options": {
-    "targetVisualNames": [
-      "980fde2d990c0a6a1597"
-    ]
+    "targetVisualNames": []
   },
   "explorationState": {
     "version": "1.11",
@@ -32,78 +30,11 @@
           ]
         },
         "visualContainers": {
-          "f76462907a0000e19582": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "35a09533e3a393e957ee",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp base_clientes"
-                        }
-                      },
-                      "Property": "empresa"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
-            "singleVisual": {
-              "visualType": "slicer",
-              "objects": {
-                "merge": {
-                  "data": [
-                    {
-                      "properties": {
-                        "mode": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "'Dropdown'"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  ]
-                }
-              },
-              "activeProjections": {
-                "Values": [
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp base_clientes"
-                        }
-                      },
-                      "Property": "empresa"
-                    }
-                  }
-                ]
-              }
-            }
-          },
-          "bcb396bf15e23d635076": {
-            "singleVisual": {
-              "visualType": "image",
-              "objects": {}
-            }
-          },
-          "75d4a3e5d5d6e928b5c0": {
-            "singleVisual": {
-              "visualType": "textbox",
-              "objects": {}
-            }
-          },
           "0bbff05081889d0ea4bd": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "f54c4d7fbdaa803476b6",
+                  "name": "5f5d4e5e281ae28a827b",
                   "type": "Advanced",
                   "expression": {
                     "Aggregation": {
@@ -129,425 +60,21 @@
               "objects": {}
             }
           },
-          "850547c2e8a53e068c83": {
+          "1b0652f57d2eae07301a": {
             "singleVisual": {
               "visualType": "shape",
               "objects": {}
             }
           },
-          "bc10ec6d7e5b435b24d7": {
-            "singleVisual": {
-              "visualType": "shape",
-              "objects": {}
-            }
-          },
-          "980fde2d990c0a6a1597": {
-            "filters": {
-              "byName": {
-                "0a09426ab7edd2aec3db": {
-                  "name": "0a09426ab7edd2aec3db",
-                  "type": "Categorical",
-                  "filter": {
-                    "Version": 2,
-                    "From": [
-                      {
-                        "Name": "m",
-                        "Entity": "mvp solicitacao_servicos",
-                        "Type": 0
-                      }
-                    ],
-                    "Where": [
-                      {
-                        "Condition": {
-                          "Not": {
-                            "Expression": {
-                              "In": {
-                                "Expressions": [
-                                  {
-                                    "Column": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Source": "m"
-                                        }
-                                      },
-                                      "Property": "uf"
-                                    }
-                                  }
-                                ],
-                                "Values": [
-                                  [
-                                    {
-                                      "Literal": {
-                                        "Value": "null"
-                                      }
-                                    }
-                                  ]
-                                ]
-                              }
-                            }
-                          }
-                        }
-                      }
-                    ]
-                  },
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "uf"
-                    }
-                  },
-                  "howCreated": 1
-                }
-              },
-              "byExpr": [
-                {
-                  "name": "7b4bec50038b34000a20",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "empresa"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "009ee56026cc0c96b89e",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "uf_ajustada"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "c45e39bf65dc470020d4",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "cidade"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "e3bc606aa87b8aec1404",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "protocolo"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "1eee5c75c5014b609cab",
-                  "type": "Advanced",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "id_ticket"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "5b34427070833c6e098a",
-                  "type": "Advanced",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "id_contrato"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "ea232100a50691d40ba9",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "data_abertura"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "0620019867b36d78517b",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "status"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "bf001632a686c0a451a3",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "tipo_solicitacao"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "8c32c491bc11daa69a87",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "data_fechamento"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "4a00bc917600383dca30",
-                  "type": "Advanced",
-                  "expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Medidas"
-                        }
-                      },
-                      "Property": "PRODUTIVAS_GROSS_ATIV"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "fb8208a5943d92cc0ca0",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "cliente"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
-            "singleVisual": {
-              "visualType": "tableEx",
-              "objects": {},
-              "projections": {
-                "Values": [
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "empresa"
-                    }
-                  },
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "uf_ajustada"
-                    }
-                  },
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "cidade"
-                    }
-                  },
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "protocolo"
-                    }
-                  },
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "id_ticket"
-                    }
-                  },
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "id_contrato"
-                    }
-                  },
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "cliente"
-                    }
-                  },
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "status"
-                    }
-                  },
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "tipo_solicitacao"
-                    }
-                  },
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "data_abertura"
-                    }
-                  },
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "mvp solicitacao_servicos"
-                        }
-                      },
-                      "Property": "data_fechamento"
-                    }
-                  },
-                  {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Medidas"
-                        }
-                      },
-                      "Property": "PRODUTIVAS_GROSS_ATIV"
-                    }
-                  }
-                ]
-              },
-              "parameters": {
-                "Values": [
-                  {
-                    "expr": {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "Parâmetro_ativação"
-                          }
-                        },
-                        "Property": "Parâmetro_ativação"
-                      }
-                    },
-                    "index": 11,
-                    "length": 1
-                  }
-                ]
-              }
-            }
-          },
-          "8f7379d044d5847928e0": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
-            }
-          },
-          "d4f890240c1076bc0066": {
-            "singleVisual": {
-              "visualType": "shape",
-              "objects": {}
-            }
-          },
-          "eef219f77de859cc9522": {
+          "1bcee72c01e7083d057c": {
             "singleVisual": {
               "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "1fe8bb6c9a1cea0e5d90": {
+            "singleVisual": {
+              "visualType": "pageNavigator",
               "objects": {}
             }
           },
@@ -570,7 +97,7 @@
                   "howCreated": 1
                 },
                 {
-                  "name": "bb0e97db9c755740c138",
+                  "name": "c3500093e9a4cc8a45be",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -678,24 +205,502 @@
                     }
                   }
                 ]
+              },
+              "display": {
+                "mode": "hidden"
               }
             }
           },
-          "1b0652f57d2eae07301a": {
-            "singleVisual": {
-              "visualType": "shape",
-              "objects": {}
-            }
-          },
-          "1bcee72c01e7083d057c": {
+          "75d4a3e5d5d6e928b5c0": {
             "singleVisual": {
               "visualType": "textbox",
               "objects": {}
             }
           },
-          "1fe8bb6c9a1cea0e5d90": {
+          "850547c2e8a53e068c83": {
             "singleVisual": {
-              "visualType": "pageNavigator",
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "8f7379d044d5847928e0": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "980fde2d990c0a6a1597": {
+            "filters": {
+              "byName": {
+                "0a09426ab7edd2aec3db": {
+                  "name": "0a09426ab7edd2aec3db",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "m",
+                        "Entity": "mvp solicitacao_servicos",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "m"
+                                        }
+                                      },
+                                      "Property": "uf"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "uf"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                "39fc3ed620a26b0489c2": {
+                  "name": "39fc3ed620a26b0489c2",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "m1",
+                        "Entity": "Medidas",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 1,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "m1"
+                                  }
+                                },
+                                "Property": "PRODUTIVAS_GROSS_ATIV"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "0L"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Medidas"
+                        }
+                      },
+                      "Property": "PRODUTIVAS_GROSS_ATIV"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              },
+              "byExpr": [
+                {
+                  "name": "61b63bb0168bcb930a20",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "empresa"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "36bc02d60ad6205131dc",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "uf_ajustada"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "61883662080276aaa55c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "cidade"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "cea5e744cb49333c32b4",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "protocolo"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "89652dd9db17e00b6b05",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "id_ticket"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "f07822a8430d84add672",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "id_contrato"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "7d5cecf215380cb37630",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "id_cliente"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c382673d7b3ad8edbb3c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "cliente"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3faa21be04b592bd4759",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "status"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1033a1003eb58d760908",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "tipo_solicitacao"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6bd140e453bccc9b0aee",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "data_abertura"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "58f2027513a11063d590",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "data_fechamento"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "projections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "empresa"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "uf_ajustada"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "cidade"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "protocolo"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "id_ticket"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "id_contrato"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "id_cliente"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "cliente"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "status"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "tipo_solicitacao"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "data_abertura"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp solicitacao_servicos"
+                        }
+                      },
+                      "Property": "data_fechamento"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Medidas"
+                        }
+                      },
+                      "Property": "PRODUTIVAS_GROSS_ATIV"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Values": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Parâmetro_ativação"
+                          }
+                        },
+                        "Property": "Parâmetro_ativação"
+                      }
+                    },
+                    "index": 12,
+                    "length": 1
+                  }
+                ]
+              }
+            }
+          },
+          "bc10ec6d7e5b435b24d7": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "bcb396bf15e23d635076": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "d4f890240c1076bc0066": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "eef219f77de859cc9522": {
+            "singleVisual": {
+              "visualType": "textbox",
               "objects": {}
             }
           },
@@ -703,7 +708,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "4971d54cc4841c9a2109",
+                  "name": "7dccdf30c5820c61e1a0",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -817,6 +822,61 @@
                 "mode": "hidden"
               }
             }
+          },
+          "f76462907a0000e19582": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "02631712d0d5e222a98a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp base_clientes"
+                        }
+                      },
+                      "Property": "empresa"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "mvp base_clientes"
+                        }
+                      },
+                      "Property": "empresa"
+                    }
+                  }
+                ]
+              }
+            }
           }
         }
       }
@@ -829,7 +889,7 @@
               "expanded": {
                 "expr": {
                   "Literal": {
-                    "Value": "false"
+                    "Value": "true"
                   }
                 }
               }

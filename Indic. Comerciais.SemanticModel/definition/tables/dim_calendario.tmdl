@@ -295,6 +295,20 @@ table dim_calendario
 
 		annotation SummarizationSetBy = Automatic
 
+	column Data_passada_hoje =
+			
+			
+			SWITCH(
+			    TRUE(),
+			    dim_calendario[data_passada]=TRUE() && dim_calendario[hoje]=TRUE(), "SIM",
+			    dim_calendario[data_passada]=TRUE() && dim_calendario[hoje]=FALSE(), "NÃO",
+			    "DATAS FUTURAS"
+			)
+		lineageTag: 1bb70d49-b23a-452d-a1ec-38cf08bc45d4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition dim_calendario = m
 		mode: import
 		source =

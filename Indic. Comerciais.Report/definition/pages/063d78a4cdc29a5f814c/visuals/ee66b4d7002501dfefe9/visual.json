@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "ee66b4d7002501dfefe9",
   "position": {
     "x": 292.027074226029,
@@ -1154,6 +1154,146 @@
             }
           ]
         }
+      },
+      {
+        "name": "628e417ec770edb100e6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mvp base_clientes"
+              }
+            },
+            "Property": "empresa"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c840feb6248cd5999016",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mvp base_clientes"
+              }
+            },
+            "Property": "ajuste_uf"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5c5e9202514200cb2c5e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mvp base_clientes"
+              }
+            },
+            "Property": "ajuste_cidade"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a5f2dc676c97024877b6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Vendas"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a85fc0abe6c45a189277",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Proj. Vendas"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b9728014464a331035a8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Meta Vendas"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a4cb8a37e916820b3081",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "% COBERT Vendas"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5ca8a337bb01c4270ec9",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Backlog Total Ativ"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4c215a77277cc34ecc01",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "DIAS ESTOQUE_vendas"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "991a8c633d877049939b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Media_du_PROD"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

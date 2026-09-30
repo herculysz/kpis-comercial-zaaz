@@ -35,7 +35,9 @@ table Medidas
 			CALCULATE(
 			    [Qtd Solicitacoes],
 			    --'mvp solicitacao_servicos'[tipo_servico] = vTipo,
-			    'mvp solicitacao_servicos'[status] IN {"ABERTA","AGENDADA","ANDAMENTO","ENCAMINHADA","ABERTURA"},
+			    'mvp solicitacao_servicos'[tipo_servico] IN {"GROSS - ATIV", "GROSS - REATIV"},
+			    --'mvp solicitacao_servicos'[status] IN {"ABERTA","AGENDADA","ANDAMENTO","ENCAMINHADA","ABERTURA"},
+			    NOT('mvp solicitacao_servicos'[status] IN {"FINALIZADA", "FECHAMENTO", "ENCERRAMENTO", "CANCELADO"}),
 			    USERELATIONSHIP( 'mvp solicitacao_servicos'[data_abertura], dim_calendario[data])
 			)
 		formatString: 0

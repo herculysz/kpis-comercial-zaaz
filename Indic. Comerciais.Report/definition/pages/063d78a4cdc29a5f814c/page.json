@@ -8,15 +8,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "756086a835d80c70b839",
+        "name": "9e70e60de42c0a3b2a11",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "mvp base_clientes"
+                "Entity": "dim_calendario"
               }
             },
-            "Property": "data_venda"
+            "Property": "data"
           }
         },
         "type": "RelativeDate",
@@ -24,8 +24,8 @@
           "Version": 2,
           "From": [
             {
-              "Name": "m",
-              "Entity": "mvp base_clientes",
+              "Name": "d",
+              "Entity": "dim_calendario",
               "Type": 0
             }
           ],
@@ -37,10 +37,10 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Source": "m"
+                          "Source": "d"
                         }
                       },
-                      "Property": "data_venda"
+                      "Property": "data"
                     }
                   },
                   "LowerBound": {
@@ -50,14 +50,20 @@
                           "Expression": {
                             "DateAdd": {
                               "Expression": {
-                                "Now": {}
+                                "DateAdd": {
+                                  "Expression": {
+                                    "Now": {}
+                                  },
+                                  "Amount": -1,
+                                  "TimeUnit": 0
+                                }
                               },
                               "Amount": 1,
                               "TimeUnit": 0
                             }
                           },
-                          "Amount": -31,
-                          "TimeUnit": 0
+                          "Amount": -2,
+                          "TimeUnit": 2
                         }
                       },
                       "TimeUnit": 0
@@ -66,88 +72,17 @@
                   "UpperBound": {
                     "DateSpan": {
                       "Expression": {
-                        "Now": {}
+                        "DateAdd": {
+                          "Expression": {
+                            "Now": {}
+                          },
+                          "Amount": -1,
+                          "TimeUnit": 0
+                        }
                       },
                       "TimeUnit": 0
                     }
                   }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User",
-        "isLockedInViewMode": true
-      },
-      {
-        "name": "bc04f1f43c83c9ce5706",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "mvp base_clientes"
-              }
-            },
-            "Property": "tecnologia"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User"
-      },
-      {
-        "name": "2afca7366a9461588503",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "mvp solicitacao_servicos"
-              }
-            },
-            "Property": "tipo_servico"
-          }
-        },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "m",
-              "Entity": "mvp solicitacao_servicos",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "m"
-                          }
-                        },
-                        "Property": "tipo_servico"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'GROSS - ATIV'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'GROSS - REATIV'"
-                        }
-                      }
-                    ]
-                  ]
                 }
               }
             }

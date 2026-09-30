@@ -442,7 +442,7 @@ table 'mvp base_clientes'
 				            FROM
 				                mvp.base_clientes 
 							WHERE
-								data_venda::date >= DATE_TRUNC('month', CURRENT_DATE - INTERVAL '1 month') AND data_venda::date < CURRENT_DATE
+								data_venda::date >= DATE_TRUNC('month', CURRENT_DATE - INTERVAL '1 month') --AND data_venda::date < CURRENT_DATE
 				        ", 
 				        null, 
 				        [EnableFolding = true]
