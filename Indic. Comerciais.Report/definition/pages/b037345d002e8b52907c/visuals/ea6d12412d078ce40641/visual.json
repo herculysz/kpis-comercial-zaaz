@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "ea6d12412d078ce40641",
+  "position": {
+    "x": 104.28571428571429,
+    "y": 435.71428571428572,
+    "z": 1,
+    "height": 308.57142857142861,
+    "width": 571.42857142857144,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "A Diferença de Backlog na região nordeste é devido à tabela da esquerda não filtrar data de fechamento, já a tabela da direita filtra data de fechamento menor que a data de hoje no filtro padrão, os protocolos primeiro tem a data_fechamento atualizada mas continuam com status em ANDAMENTO dentro do banco, por isso essa divergência;",
+                    "textStyle": {
+                      "fontSize": "18pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

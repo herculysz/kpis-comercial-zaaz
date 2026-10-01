@@ -4,8 +4,8 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 800.25989445910307,
-        "y": 0
+        "x": 0,
+        "y": 103.19251336898397
       },
       "nodes": [
         {
@@ -125,7 +125,7 @@
         }
       ],
       "name": "Todas as tabelas",
-      "zoomValue": 90.3456495828367,
+      "zoomValue": 89.153754469606667,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

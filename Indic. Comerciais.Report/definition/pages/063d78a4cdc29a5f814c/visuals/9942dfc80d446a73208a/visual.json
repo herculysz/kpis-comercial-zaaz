@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "9942dfc80d446a73208a",
   "position": {
-    "x": 1568.7712602725405,
-    "y": 153.88753934230809,
-    "z": 17001,
+    "x": 1570.1848728379855,
+    "y": 158.12837703864318,
+    "z": 18000,
     "height": 28.191653786707882,
     "width": 155.79598145285937,
-    "tabOrder": 17001
+    "tabOrder": 16000
   },
   "visual": {
     "visualType": "card",
@@ -23,11 +23,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "DU REAL_Vendas"
+                  "Property": "DU REAL_Gross"
                 }
               },
-              "queryRef": "Medidas.DU REAL_Vendas",
-              "nativeQueryRef": "DU REAL_Vendas"
+              "queryRef": "Medidas.DU REAL_Gross",
+              "nativeQueryRef": "DU REAL_Gross"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "Medidas"
                   }
                 },
-                "Property": "DU REAL_Vendas"
+                "Property": "DU REAL_Gross"
               }
             },
             "direction": "Descending"

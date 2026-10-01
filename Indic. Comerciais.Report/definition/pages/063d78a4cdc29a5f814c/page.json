@@ -5,93 +5,6 @@
   "displayOption": "FitToPage",
   "height": 1080,
   "width": 1920,
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "9e70e60de42c0a3b2a11",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_calendario"
-              }
-            },
-            "Property": "data"
-          }
-        },
-        "type": "RelativeDate",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "dim_calendario",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Between": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "d"
-                        }
-                      },
-                      "Property": "data"
-                    }
-                  },
-                  "LowerBound": {
-                    "DateSpan": {
-                      "Expression": {
-                        "DateAdd": {
-                          "Expression": {
-                            "DateAdd": {
-                              "Expression": {
-                                "DateAdd": {
-                                  "Expression": {
-                                    "Now": {}
-                                  },
-                                  "Amount": -1,
-                                  "TimeUnit": 0
-                                }
-                              },
-                              "Amount": 1,
-                              "TimeUnit": 0
-                            }
-                          },
-                          "Amount": -2,
-                          "TimeUnit": 2
-                        }
-                      },
-                      "TimeUnit": 0
-                    }
-                  },
-                  "UpperBound": {
-                    "DateSpan": {
-                      "Expression": {
-                        "DateAdd": {
-                          "Expression": {
-                            "Now": {}
-                          },
-                          "Amount": -1,
-                          "TimeUnit": 0
-                        }
-                      },
-                      "TimeUnit": 0
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
-      }
-    ]
-  },
   "objects": {
     "background": [
       {
@@ -124,5 +37,82 @@
         }
       }
     ]
-  }
+  },
+  "visualInteractions": [
+    {
+      "source": "9653ddf92090616c07c9",
+      "target": "a52330121ed5620cbb40",
+      "type": "NoFilter"
+    },
+    {
+      "source": "9653ddf92090616c07c9",
+      "target": "e713aafe52ee201dc9dd",
+      "type": "NoFilter"
+    },
+    {
+      "source": "9653ddf92090616c07c9",
+      "target": "39b1bc973dbb0ae94068",
+      "type": "NoFilter"
+    },
+    {
+      "source": "9653ddf92090616c07c9",
+      "target": "87e53e484e633cb8c415",
+      "type": "NoFilter"
+    },
+    {
+      "source": "9653ddf92090616c07c9",
+      "target": "ee66b4d7002501dfefe9",
+      "type": "NoFilter"
+    },
+    {
+      "source": "169d4ef1a712d15ed34d",
+      "target": "18be4bdfb5d91eb130b4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "169d4ef1a712d15ed34d",
+      "target": "f27cb1e44f5e225dd6e7",
+      "type": "NoFilter"
+    },
+    {
+      "source": "169d4ef1a712d15ed34d",
+      "target": "9653ddf92090616c07c9",
+      "type": "DataFilter"
+    },
+    {
+      "source": "169d4ef1a712d15ed34d",
+      "target": "defdd8960a03facc346f",
+      "type": "NoFilter"
+    },
+    {
+      "source": "9653ddf92090616c07c9",
+      "target": "169d4ef1a712d15ed34d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "169d4ef1a712d15ed34d",
+      "target": "9942dfc80d446a73208a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "169d4ef1a712d15ed34d",
+      "target": "e0fbe3b4002b1a4b3d04",
+      "type": "DataFilter"
+    },
+    {
+      "source": "169d4ef1a712d15ed34d",
+      "target": "ab258f29927e559b1ada",
+      "type": "DataFilter"
+    },
+    {
+      "source": "9653ddf92090616c07c9",
+      "target": "9942dfc80d446a73208a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "9653ddf92090616c07c9",
+      "target": "18be4bdfb5d91eb130b4",
+      "type": "DataFilter"
+    }
+  ]
 }

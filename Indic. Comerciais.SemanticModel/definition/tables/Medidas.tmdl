@@ -27,19 +27,22 @@ table Medidas
 		displayFolder: Backlog
 		lineageTag: 2174f6db-40cd-4e16-8394-ec13cd8f6e81
 
-	measure 'Backlog Total' =
+	measure 'Backlog Total' = ```
 			
 			-- Dados validados por Oliveira
 			var vTipo = SELECTEDVALUE('mvp solicitacao_servicos'[tipo_servico])
-			return
+			RETURN
+			
 			CALCULATE(
-			    [Qtd Solicitacoes],
+			    COUNTROWS('mvp solicitacao_servicos'),
 			    --'mvp solicitacao_servicos'[tipo_servico] = vTipo,
 			    'mvp solicitacao_servicos'[tipo_servico] IN {"GROSS - ATIV", "GROSS - REATIV"},
 			    --'mvp solicitacao_servicos'[status] IN {"ABERTA","AGENDADA","ANDAMENTO","ENCAMINHADA","ABERTURA"},
-			    NOT('mvp solicitacao_servicos'[status] IN {"FINALIZADA", "FECHAMENTO", "ENCERRAMENTO", "CANCELADO"}),
-			    USERELATIONSHIP( 'mvp solicitacao_servicos'[data_abertura], dim_calendario[data])
+			    NOT('mvp solicitacao_servicos'[status] IN {"FINALIZADA", "FECHAMENTO", "ENCERRAMENTO", "CANCELADO"})
+			    --,USERELATIONSHIP( 'mvp solicitacao_servicos'[data_abertura], dim_calendario[data])
 			)
+			
+			```
 		formatString: 0
 		displayFolder: Backlog
 		lineageTag: 9d5e8cc1-8872-4ccb-bcdc-922bd6233a52
@@ -288,7 +291,8 @@ table Medidas
 			    USERELATIONSHIP(
 			        dim_calendario[data],
 			        'mvp solicitacao_servicos'[data_fechamento]
-			    )
+			    ),
+			    'mvp solicitacao_servicos'[data_fechamento_mes] = "MÊS ATUAL"
 			)
 			
 			```
@@ -1653,7 +1657,7 @@ table Medidas
 
 	measure 'Backlog Total Ativ' =
 			
-			VAR backlog =
+			--VAR backlog =
 			CALCULATE(
 			    [Backlog Total],
 			    TREATAS(
@@ -1662,9 +1666,10 @@ table Medidas
 			        'mvp solicitacao_servicos'[cidade]
 			    )
 			)
+			/*
 			RETURN
 			
-			IF([Vendas]> 0, backlog+0, BLANK())
+			IF([Vendas]> 0, backlog+0, BLANK())*/
 		formatString: 0
 		displayFolder: Comercial\Vendas BL
 		lineageTag: ade321a5-2548-44ca-8b63-1eebe69aeffc
@@ -1951,13 +1956,13 @@ table Medidas
 	measure 'Proj. gross' = ```
 			
 			
-			        ROUND(
-			            DIVIDE(
-			                [PRODUTIVAS_GROSS_ATIV],
-			                [DU REAL_Vendas]
-			            ) * [DU PLAN_Vendas],
-			            0
-			        )
+			    ROUND(
+			        DIVIDE(
+			            [PRODUTIVAS_GROSS_ATIV],
+			            [DU REAL_Gross]
+			        ) * [DU PLAN_Gross],
+			        0
+			    )
 			```
 		formatString: #,0
 		displayFolder: Comercial\Gross BL
@@ -2021,7 +2026,7 @@ table Medidas
 			
 			DIVIDE(
 			    [PRODUTIVAS_GROSS_ATIV],
-			    [DU REAL_Vendas],
+			    [DU REAL_Gross],
 			    0
 			)
 		formatString: 0
@@ -2138,7 +2143,7 @@ table Medidas
 			        USERELATIONSHIP('dim_calendario'[data], 'mvp base_clientes'[data_venda])
 			    )
 			RETURN
-			    "De " & FORMAT(DataInicio, "dd/mm/yyyy") & " até " & FORMAT(DataFim, "dd/mm/yyyy")
+			    "Venda de " & FORMAT(DataInicio, "dd/mm/yyyy") & " até " & FORMAT(DataFim, "dd/mm/yyyy")
 			```
 		displayFolder: Comercial\Vendas BL
 		lineageTag: 15ed934a-fae0-456c-b402-996eaa164e5a
@@ -2156,10 +2161,65 @@ table Medidas
 			        USERELATIONSHIP('dim_calendario'[data], 'mvp solicitacao_servicos'[data_fechamento])
 			    )
 			RETURN
-			    "De " & FORMAT(DataInicio, "dd/mm/yyyy") & " até " & FORMAT(DataFim, "dd/mm/yyyy")
+			    "Fechamento de " & FORMAT(DataInicio, "dd/mm/yyyy") & " até " & FORMAT(DataFim, "dd/mm/yyyy")
 			```
 		displayFolder: Comercial\Gross BL
 		lineageTag: bc6c572a-9d6e-4fb5-b3f6-7cf7ce001034
+
+	measure 'DU PLAN_Gross' =
+			
+			
+			VAR _DataReferencia =
+			    CALCULATE(
+			        MAX('mvp solicitacao_servicos'[data_fechamento]),
+			        ALLSELECTED('mvp solicitacao_servicos'),
+			        USERELATIONSHIP(
+			            dim_calendario[data],
+			            'mvp solicitacao_servicos'[data_fechamento]
+			        )
+			    )
+			VAR _InicioMes = DATE(YEAR(_DataReferencia), MONTH(_DataReferencia), 1)
+			VAR _FimMes = EOMONTH(_DataReferencia, 0)
+			RETURN
+			    SUMX(
+			        FILTER(
+			            ALL(dim_calendario),
+			            dim_calendario[data] >= _InicioMes
+			                && dim_calendario[data] <= _FimMes
+			        ),
+			        [peso_dia_util_vendas] + [peso_sabado_vendas] + [peso_domingo_vendas] + [peso_feriado_vendas]
+			    )
+		displayFolder: Comercial\Gross BL
+		lineageTag: ad4d7b40-f7ef-497a-8d86-2c62e2a92796
+
+		formatStringDefinition = "DU PLAN "&"0.00"
+
+	measure 'DU REAL_Gross' =
+			
+			
+			VAR _DataReferencia =
+			    CALCULATE(
+			        MAX('mvp solicitacao_servicos'[data_fechamento]),
+			        ALLSELECTED('mvp solicitacao_servicos'),
+			        USERELATIONSHIP(
+			            dim_calendario[data],
+			            'mvp solicitacao_servicos'[data_fechamento]
+			        )
+			    )
+			VAR _InicioMes = DATE(YEAR(_DataReferencia), MONTH(_DataReferencia), 1)
+			RETURN
+			    SUMX(
+			        FILTER(
+			            ALL(dim_calendario),
+			            dim_calendario[data] >= _InicioMes
+			                && dim_calendario[data] <= _DataReferencia
+			        ),
+			        [peso_dia_util_vendas] + [peso_sabado_vendas] + [peso_domingo_vendas] + [peso_feriado_vendas]
+			    )
+		displayFolder: Comercial\Gross BL
+		lineageTag: c7c0ad95-1c00-4d14-b85d-f7e6441bf998
+
+		formatStringDefinition = "DU REAL "&"0.00"
 
 	partition Medidas = m
 		mode: import

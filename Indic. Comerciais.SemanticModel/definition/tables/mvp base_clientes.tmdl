@@ -423,6 +423,55 @@ table 'mvp base_clientes'
 
 		annotation SummarizationSetBy = Automatic
 
+	column data_venda_mes = ```
+			
+			
+			VAR _data = 'mvp base_clientes'[data_venda]
+			VAR _Hoje = TODAY()
+			VAR _PrimeiroDiaDoMes = (DAY(_Hoje) = 1)
+			
+			// Identifica o mês/ano da linha da calendário
+			VAR _AnoMesLinha = YEAR(_data) * 100 + MONTH(_data)
+			
+			// MÊS ATUAL e MÊS ANTERIOR baseados no dia de HOJE
+			VAR _AnoMesAtual = YEAR(_Hoje) * 100 + MONTH(_Hoje)
+			VAR _AnoMesAnterior = YEAR(EDATE(_Hoje, -1)) * 100 + MONTH(EDATE(_Hoje, -1))
+			
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        -- Se for o 1º dia do mês e a linha for do MÊS ANTERIOR -> Seleção Automática
+			        _PrimeiroDiaDoMes && _AnoMesLinha = _AnoMesAnterior, "MÊS ATUAL",
+			        
+			        -- Se NÃO for o 1º dia do mês e a linha for do MÊS ATUAL -> Seleção Automática
+			        NOT(_PrimeiroDiaDoMes) && _AnoMesLinha = _AnoMesAtual, "MÊS ATUAL",
+			        
+			        -- Mapeamentos explícitos adicionais para permitir consulta manual
+			        _AnoMesLinha = _AnoMesAtual, "MÊS ATUAL",
+			        _AnoMesLinha = _AnoMesAnterior, "MÊS ANTERIOR",
+			        
+			        "Outros"
+			    )
+			```
+		lineageTag: 3b62d5ae-2ede-4b49-8842-51164d0a3f36
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_venda_intervalo = ```
+			
+			IF(
+			    'mvp base_clientes'[data_venda] < TODAY(), 
+			    "ANTERIOR A HOJE", 
+			    IF('mvp base_clientes'[data_venda] = TODAY(),
+			    "HOJE", "OUTROS"
+			))
+			```
+		lineageTag: dc9b4fb2-06ed-40b1-bb01-fcbf442fdb41
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'mvp base_clientes' = m
 		mode: import
 		source = ```

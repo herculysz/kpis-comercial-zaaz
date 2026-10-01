@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "ab258f29927e559b1ada",
   "position": {
-    "x": 1122.2596323655639,
-    "y": 134.35265562137786,
+    "x": 1122.5,
+    "y": 143.75,
     "z": 17000,
-    "height": 897.20930232558135,
-    "width": 759.06976744186045,
-    "tabOrder": 17000
+    "height": 888.75,
+    "width": 758.75,
+    "tabOrder": 15000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -133,10 +133,10 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Backlog Gross BL"
+                  "Property": "Backlog Total"
                 }
               },
-              "queryRef": "Medidas.Backlog Gross BL",
+              "queryRef": "Medidas.Backlog Total",
               "nativeQueryRef": "BACKLOG",
               "displayName": "BACKLOG"
             },
@@ -1110,146 +1110,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "642ee60c0c4d828923d3",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "mvp solicitacao_servicos"
-              }
-            },
-            "Property": "empresa"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "4cad184d38dd6d5c4edb",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "mvp solicitacao_servicos"
-              }
-            },
-            "Property": "uf_ajustada"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a07618136038635de12e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "mvp solicitacao_servicos"
-              }
-            },
-            "Property": "cidade"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a55c6c4929c009b34de9",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "PRODUTIVAS_GROSS_ATIV"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "324d2ad2857a00268d71",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Proj. gross"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "a2b7cd1866b3d171976b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Meta Gross"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "9ae002a1061e48e9d09a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "% COBERT Gross"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "3d6737bc3190e83868b6",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Backlog Gross BL"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "1790f9aae844a4a44e29",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "DIAS ESTOQUE GROSS"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "93bafd04858a9460d509",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Media DU PROD Gross"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

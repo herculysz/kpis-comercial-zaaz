@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "3ad04a8f2ab56a4e5916",
-  "displayName": "Analítico - Gross",
+  "displayName": "Analítico - Gross BL",
   "displayOption": "FitToPage",
   "height": 1080,
   "width": 1920,
@@ -31,8 +31,6 @@
       {
         "name": "6df830d424853151aa24",
         "boundFilter": "20d29546cb7d0ca9ddc8",
-        "asAggregation": false,
-        "qnaSingleSelectRequired": false,
         "fieldExpr": {
           "Measure": {
             "Expression": {
