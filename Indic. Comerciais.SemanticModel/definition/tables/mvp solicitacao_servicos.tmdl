@@ -408,10 +408,26 @@ table 'mvp solicitacao_servicos'
 
 	column data_fechamento_intervalo = ```
 			
+			/*
 			IF(
 			    'mvp solicitacao_servicos'[data_fechamento] < TODAY(), 
 			    "ANTERIOR A HOJE", 
 			    "HOJE"
+			)
+			*/
+			
+			VAR _hoje = TODAY()
+			VAR _dataFechamento = 'mvp solicitacao_servicos'[data_fechamento]
+			
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    ISBLANK(_dataFechamento), BLANK(),
+			    _dataFechamento = _hoje, "HOJE",
+			    YEAR(_dataFechamento) = YEAR(_hoje) && MONTH(_dataFechamento) = MONTH(_hoje), "MÊS ATUAL",
+			    _dataFechamento < DATE(YEAR(_hoje), MONTH(_hoje), 1), "MESES ANTERIORES",
+			    _dataFechamento > EOMONTH(_hoje, 0), "MÊS FUTURO",
+			    "OUTRO"
 			)
 			```
 		lineageTag: 48345069-dd4b-47e4-9501-769fe0c04dd8
@@ -528,11 +544,12 @@ table 'mvp solicitacao_servicos'
 				           WHERE
 								tipo_servico IN ('GROSS - ATIV', 'GROSS - REATIV') AND 
 								(
-									data_fechamento >= DATE_TRUNC('month', CURRENT_DATE - INTERVAL '1 month') OR
-									(
+									--data_fechamento >= DATE_TRUNC('month', CURRENT_DATE - INTERVAL '1 month') 
+									data_fechamento >= DATE '2026-01-01' OR data_fechamento IS NULL
+									/*(
 										data_fechamento IS NULL AND
-										status NOT IN ('FINALIZADA', 'FECHAMENTO', 'ENCERRAMENTO')
-									)
+										status NOT IN ('FINALIZADA', 'FECHAMENTO', 'ENCERRAMENTO', 'CANCELADO')
+									)*/
 								)
 								-- AND data_fechamento < CURRENT_DATE) OR (data_fechamento IS NULL)
 				                -- data_fechamento >= '2026-08-01' AND data_fechamento < CURRENT_DATE

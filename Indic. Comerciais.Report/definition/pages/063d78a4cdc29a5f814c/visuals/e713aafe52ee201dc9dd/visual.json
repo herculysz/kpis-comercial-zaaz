@@ -166,58 +166,18 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "efbff7090ca6825b43a9",
+        "name": "adbe3b1d238428bb190a",
         "field": {
-          "Column": {
+          "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "mvp base_clientes"
+                "Entity": "Medidas"
               }
             },
-            "Property": "data_venda_mes"
+            "Property": "DU REAL_Vendas"
           }
         },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "m",
-              "Entity": "mvp base_clientes",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "m"
-                          }
-                        },
-                        "Property": "data_venda_mes"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'MÊS ATUAL'"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
+        "type": "Advanced"
       }
     ]
   }

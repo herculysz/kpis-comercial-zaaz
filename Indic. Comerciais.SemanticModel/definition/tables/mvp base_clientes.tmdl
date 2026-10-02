@@ -460,12 +460,30 @@ table 'mvp base_clientes'
 
 	column data_venda_intervalo = ```
 			
+			
+			 /*
 			IF(
 			    'mvp base_clientes'[data_venda] < TODAY(), 
 			    "ANTERIOR A HOJE", 
 			    IF('mvp base_clientes'[data_venda] = TODAY(),
 			    "HOJE", "OUTROS"
 			))
+			*/
+			
+			VAR _hoje = TODAY()
+			VAR _dataVenda = 'mvp base_clientes'[data_venda]
+			
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    ISBLANK(_dataVenda), BLANK(),
+			    _dataVenda = _hoje, "HOJE",
+			    YEAR(_dataVenda) = YEAR(_hoje) && MONTH(_dataVenda) = MONTH(_hoje) && _dataVenda < _hoje, "MÊS ATUAL",
+			    _dataVenda < DATE(YEAR(_hoje), MONTH(_hoje), 1), "MESES ANTERIORES",
+			    --_dataVenda > EOMONTH(_hoje, 0), "MÊS FUTURO",
+			    _dataVenda > _hoje, "FUTURO",
+			    "OUTRO"
+			)
 			```
 		lineageTag: dc9b4fb2-06ed-40b1-bb01-fcbf442fdb41
 		summarizeBy: none
@@ -491,7 +509,8 @@ table 'mvp base_clientes'
 				            FROM
 				                mvp.base_clientes 
 							WHERE
-								data_venda::date >= DATE_TRUNC('month', CURRENT_DATE - INTERVAL '1 month') --AND data_venda::date < CURRENT_DATE
+								data_venda >= DATE '2026-01-01'
+								--data_venda::date >= DATE_TRUNC('month', CURRENT_DATE - INTERVAL '1 month') --AND data_venda::date < CURRENT_DATE
 				        ", 
 				        null, 
 				        [EnableFolding = true]

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
-  "name": "d98e882d288d4c578076",
+  "name": "1ec0d7ad2a5658ad55a7",
   "position": {
-    "x": 19.534883720930232,
-    "y": 1054.8837209302326,
-    "z": 6000,
-    "height": 13.953488372093023,
-    "width": 108.83720930232558,
-    "tabOrder": 5000
+    "x": 0,
+    "y": 1058.3333333333335,
+    "z": 24004,
+    "height": 20.833333333333336,
+    "width": 192.5,
+    "tabOrder": 24005
   },
   "visual": {
     "visualType": "card",
@@ -31,13 +31,33 @@
                   "Function": 3
                 }
               },
-              "queryRef": "Min(Atualizacao.Data/hora Online)",
+              "queryRef": "Min(fct_atualizado.Data/hora Online)",
               "nativeQueryRef": "Data/hora Online mais recente"
             }
           ]
         }
       },
       "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "fct_atualizado"
+                      }
+                    },
+                    "Property": "Data/hora Online"
+                  }
+                },
+                "Function": 3
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
         "isDefaultSort": true
       }
     },
@@ -81,7 +101,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "10D"
                 }
               }
             },

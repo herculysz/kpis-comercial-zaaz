@@ -147,5 +147,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6c1df6bb3026527779bc",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "DATA GROSS MAXMIN"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

@@ -210,6 +210,20 @@
               },
               "queryRef": "Medidas.Backlog Total Ativ",
               "nativeQueryRef": "Backlog Total Ativ"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Qtd Solicitacoes"
+                }
+              },
+              "queryRef": "Medidas.Qtd Solicitacoes",
+              "nativeQueryRef": "Qtd Solicitacoes"
             }
           ]
         }
@@ -322,7 +336,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'GROSS BL ANALÍTICO'"
+                  "Value": "'BACKLOG'"
                 }
               }
             },
@@ -919,41 +933,21 @@
             "Property": "Backlog Total Ativ"
           }
         },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "m1",
-              "Entity": "Medidas",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 1,
-                  "Left": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "m1"
-                        }
-                      },
-                      "Property": "Backlog Total Ativ"
-                    }
-                  },
-                  "Right": {
-                    "Literal": {
-                      "Value": "0L"
-                    }
-                  }
-                }
+        "type": "Advanced"
+      },
+      {
+        "name": "f4c34824614108d16672",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
               }
-            }
-          ]
-        }
+            },
+            "Property": "Qtd Solicitacoes"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

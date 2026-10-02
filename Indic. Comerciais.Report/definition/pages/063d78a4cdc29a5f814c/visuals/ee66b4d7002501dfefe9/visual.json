@@ -1156,7 +1156,7 @@
         }
       },
       {
-        "name": "5a99b3cb3a8a23311519",
+        "name": "5fbe3c80bb902032e945",
         "field": {
           "Column": {
             "Expression": {
@@ -1164,50 +1164,136 @@
                 "Entity": "mvp base_clientes"
               }
             },
-            "Property": "data_venda_mes"
+            "Property": "empresa"
           }
         },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "m",
-              "Entity": "mvp base_clientes",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "m"
-                          }
-                        },
-                        "Property": "data_venda_mes"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'MÊS ATUAL'"
-                        }
-                      }
-                    ]
-                  ]
-                }
+        "type": "Categorical"
+      },
+      {
+        "name": "183e0e2a50acecc8b2c7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mvp base_clientes"
               }
-            }
-          ]
+            },
+            "Property": "ajuste_uf"
+          }
         },
-        "howCreated": "User"
+        "type": "Categorical"
+      },
+      {
+        "name": "c36713a93a913ae033c8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mvp base_clientes"
+              }
+            },
+            "Property": "ajuste_cidade"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bfa2a3203d86b485b49c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Vendas"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "717214a80055e1c4b956",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Proj. Vendas"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f2be60657d6e304ee320",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Meta Vendas"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1895da099ba921650c04",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "% COBERT Vendas"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "032dfcb5cb3d5b902bec",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Backlog Total Ativ"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "412a38a3607e0bb01055",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "DIAS ESTOQUE_vendas"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f2b97e4a9a23600a1bc6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Media_du_PROD"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

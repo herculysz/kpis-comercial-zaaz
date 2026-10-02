@@ -27,7 +27,7 @@ table Medidas
 		displayFolder: Backlog
 		lineageTag: 2174f6db-40cd-4e16-8394-ec13cd8f6e81
 
-	measure 'Backlog Total' = ```
+	measure 'Backlog Total' =
 			
 			-- Dados validados por Oliveira
 			var vTipo = SELECTEDVALUE('mvp solicitacao_servicos'[tipo_servico])
@@ -39,10 +39,12 @@ table Medidas
 			    'mvp solicitacao_servicos'[tipo_servico] IN {"GROSS - ATIV", "GROSS - REATIV"},
 			    --'mvp solicitacao_servicos'[status] IN {"ABERTA","AGENDADA","ANDAMENTO","ENCAMINHADA","ABERTURA"},
 			    NOT('mvp solicitacao_servicos'[status] IN {"FINALIZADA", "FECHAMENTO", "ENCERRAMENTO", "CANCELADO"})
+			    --,REMOVEFILTERS('mvp solicitacao_servicos'[data_fechamento], 'mvp solicitacao_servicos'[data_abertura])
+			    ,ALL('mvp solicitacao_servicos'[data_fechamento_intervalo])
+			    ,REMOVEFILTERS('mvp solicitacao_servicos'[data_fechamento_intervalo])
 			    --,USERELATIONSHIP( 'mvp solicitacao_servicos'[data_abertura], dim_calendario[data])
+			    --,ALLEXCEPT('mvp solicitacao_servicos', 'mvp solicitacao_servicos'[empresa], 'mvp solicitacao_servicos'[uf_ajustada], 'mvp solicitacao_servicos'[cidade])
 			)
-			
-			```
 		formatString: 0
 		displayFolder: Backlog
 		lineageTag: 9d5e8cc1-8872-4ccb-bcdc-922bd6233a52
@@ -291,8 +293,7 @@ table Medidas
 			    USERELATIONSHIP(
 			        dim_calendario[data],
 			        'mvp solicitacao_servicos'[data_fechamento]
-			    ),
-			    'mvp solicitacao_servicos'[data_fechamento_mes] = "MÊS ATUAL"
+			    )
 			)
 			
 			```
@@ -1655,9 +1656,10 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Backlog Total Ativ' =
+	measure 'Backlog Total Ativ' = ```
 			
 			--VAR backlog =
+			/*
 			CALCULATE(
 			    [Backlog Total],
 			    TREATAS(
@@ -1666,10 +1668,117 @@ table Medidas
 			        'mvp solicitacao_servicos'[cidade]
 			    )
 			)
+			*/
+			-----------------------------------------
+			/*
+			IF(
+			    ISINSCOPE('mvp base_clientes'[ajuste_cidade]) || ISINSCOPE('mvp base_clientes'[ajuste_uf]) || ISINSCOPE('mvp base_clientes'[empresa]),
+			    CALCULATE(
+			        [Backlog Total],
+			        TREATAS(
+			            SUMMARIZE('mvp base_clientes', 'mvp base_clientes'[ajuste_uf], 'mvp base_clientes'[ajuste_cidade]),
+			            'mvp solicitacao_servicos'[uf_ajustada],
+			            'mvp solicitacao_servicos'[cidade]
+			        )
+			    ),
+			    [Backlog Total] -- No Total Geral (sem contexto de linha de cidade/UF)
+			)
+			*/
+			-----------------------------------------
+			
+			
+			
+			VAR _TemCidadeNoContexto  = ISINSCOPE('mvp base_clientes'[ajuste_cidade])
+			VAR _TemUFNoContexto      = ISINSCOPE('mvp base_clientes'[ajuste_uf])
+			VAR _TemEmpresaNoContexto = ISINSCOPE('mvp base_clientes'[empresa])
+			
+			-- -------------------------------------------------------------
+			-- TABELAS RESUMIDAS PARA O MATCH VIRTUAL
+			-- -------------------------------------------------------------
+			
+			VAR _TabelaEmpresaUFCidade = 
+			    SUMMARIZE(
+			        'mvp base_clientes',
+			        'mvp base_clientes'[empresa],
+			        'mvp base_clientes'[ajuste_uf],
+			        'mvp base_clientes'[ajuste_cidade]
+			    )
+			
+			VAR _TabelaEmpresaUF = 
+			    SUMMARIZE(
+			        'mvp base_clientes',
+			        'mvp base_clientes'[empresa],
+			        'mvp base_clientes'[ajuste_uf]
+			    )
+			
+			VAR _TabelaEmpresa = 
+			    VALUES('mvp base_clientes'[empresa])
+			
+			-- -------------------------------------------------------------
+			-- CÁLCULOS COM TREATAS
+			-- -------------------------------------------------------------
+			
+			-- Match exato por Cidade
+			VAR _BacklogPorEmpresaUFCidade = 
+			    CALCULATE(
+			        [Backlog Total],
+			        TREATAS(
+			            _TabelaEmpresaUFCidade,
+			            'mvp solicitacao_servicos'[empresa],
+			            'mvp solicitacao_servicos'[uf_ajustada],
+			            'mvp solicitacao_servicos'[cidade]
+			        )
+			    )
+			
+			-- Match por Empresa + UF (usado nos subtotais de UF)
+			VAR _BacklogPorEmpresaUF = 
+			    CALCULATE(
+			        [Backlog Total],
+			        TREATAS(
+			            _TabelaEmpresaUF,
+			            'mvp solicitacao_servicos'[empresa],
+			            'mvp solicitacao_servicos'[uf_ajustada]
+			        )
+			    )
+			
+			-- Match por Empresa (usado nos subtotais de Empresa)
+			VAR _BacklogPorEmpresa = 
+			    CALCULATE(
+			        [Backlog Total],
+			        TREATAS(
+			            _TabelaEmpresa,
+			            'mvp solicitacao_servicos'[empresa]
+			        )
+			    )
+			
+			-- -------------------------------------------------------------
+			-- RETORNO HIERÁRQUICO
+			-- -------------------------------------------------------------
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        -- No nível de Cidade: calcula rigorosamente apenas para aquela cidade
+			        _TemCidadeNoContexto,
+			            _BacklogPorEmpresaUFCidade,
+			        
+			        -- No subtotal/nível de UF: faz o match por Empresa e UF
+			        _TemUFNoContexto, 
+			            _BacklogPorEmpresaUF,
+			
+			        -- No subtotal/nível de Empresa: faz o match por Empresa
+			        _TemEmpresaNoContexto,
+			            _BacklogPorEmpresa,
+			        
+			        -- No Total Geral do relatório: exibe o total completo (799)
+			        [Backlog Total]
+			    )
+			
+			
 			/*
 			RETURN
 			
 			IF([Vendas]> 0, backlog+0, BLANK())*/
+			```
 		formatString: 0
 		displayFolder: Comercial\Vendas BL
 		lineageTag: ade321a5-2548-44ca-8b63-1eebe69aeffc
@@ -2143,7 +2252,12 @@ table Medidas
 			        USERELATIONSHIP('dim_calendario'[data], 'mvp base_clientes'[data_venda])
 			    )
 			RETURN
+			    --"Venda de " & FORMAT(DataInicio, "dd/mm/yyyy") & " até " & FORMAT(DataFim, "dd/mm/yyyy")
+			IF(
+			    ISBLANK(DataInicio) || ISBLANK(DataFim),
+			    "Selecione o filtro acima ☝️",
 			    "Venda de " & FORMAT(DataInicio, "dd/mm/yyyy") & " até " & FORMAT(DataFim, "dd/mm/yyyy")
+			)
 			```
 		displayFolder: Comercial\Vendas BL
 		lineageTag: 15ed934a-fae0-456c-b402-996eaa164e5a
@@ -2161,7 +2275,12 @@ table Medidas
 			        USERELATIONSHIP('dim_calendario'[data], 'mvp solicitacao_servicos'[data_fechamento])
 			    )
 			RETURN
+			    --"Fechamento de " & FORMAT(DataInicio, "dd/mm/yyyy") & " até " & FORMAT(DataFim, "dd/mm/yyyy")
+			IF(
+			    ISBLANK(DataInicio) || ISBLANK(DataFim),
+			    "Selecione o filtro acima ☝️",
 			    "Fechamento de " & FORMAT(DataInicio, "dd/mm/yyyy") & " até " & FORMAT(DataFim, "dd/mm/yyyy")
+			)
 			```
 		displayFolder: Comercial\Gross BL
 		lineageTag: bc6c572a-9d6e-4fb5-b3f6-7cf7ce001034

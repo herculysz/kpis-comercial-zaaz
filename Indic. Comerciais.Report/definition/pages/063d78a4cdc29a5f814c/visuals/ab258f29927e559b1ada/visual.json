@@ -1110,6 +1110,146 @@
             }
           ]
         }
+      },
+      {
+        "name": "ff573362b5728c6016ca",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mvp solicitacao_servicos"
+              }
+            },
+            "Property": "empresa"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "190b1b282dae12209228",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mvp solicitacao_servicos"
+              }
+            },
+            "Property": "uf_ajustada"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "dd3a1c80e9065d481b3c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "mvp solicitacao_servicos"
+              }
+            },
+            "Property": "cidade"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1fb8ec3483596bab07c4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "PRODUTIVAS_GROSS_ATIV"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c04c8b8e4c03d829b99b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Proj. gross"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fd292be8e44c301d88c6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Meta Gross"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9213c000d2b4be4e3686",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "% COBERT Gross"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "557861898cb334014a91",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Backlog Total"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ed24dc5c8743051005a8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "DIAS ESTOQUE GROSS"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "26a4c24b920ce4a05292",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Media DU PROD Gross"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

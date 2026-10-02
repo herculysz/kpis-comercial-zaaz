@@ -373,6 +373,118 @@ createOrReplace
 
 			annotation UnderlyingDateTimeDataType = Time
 
+		column data_fechamento_mes = ```
+				
+				
+				VAR _data = 'mvp solicitacao_servicos'[data_fechamento]
+				VAR _Hoje = TODAY()
+				VAR _PrimeiroDiaDoMes = (DAY(_Hoje) = 1)
+				
+				// Identifica o mês/ano da linha da calendário
+				VAR _AnoMesLinha = YEAR(_data) * 100 + MONTH(_data)
+				
+				// MÊS ATUAL e MÊS ANTERIOR baseados no dia de HOJE
+				VAR _AnoMesAtual = YEAR(_Hoje) * 100 + MONTH(_Hoje)
+				VAR _AnoMesAnterior = YEAR(EDATE(_Hoje, -1)) * 100 + MONTH(EDATE(_Hoje, -1))
+				
+				RETURN
+				    SWITCH(
+				        TRUE(),
+				        -- Se for o 1º dia do mês e a linha for do MÊS ANTERIOR -> Seleção Automática
+				        _PrimeiroDiaDoMes && _AnoMesLinha = _AnoMesAnterior, "MÊS ATUAL",
+				        
+				        -- Se NÃO for o 1º dia do mês e a linha for do MÊS ATUAL -> Seleção Automática
+				        NOT(_PrimeiroDiaDoMes) && _AnoMesLinha = _AnoMesAtual, "MÊS ATUAL",
+				        
+				        -- Mapeamentos explícitos adicionais para permitir consulta manual
+				        _AnoMesLinha = _AnoMesAtual, "MÊS ATUAL",
+				        _AnoMesLinha = _AnoMesAnterior, "MÊS ANTERIOR",
+				        
+				        "Outros"
+				    )
+				```
+			lineageTag: b2f4437d-58a4-49ef-8dbe-d9095ad2f4d8
+			summarizeBy: none
+
+			annotation SummarizationSetBy = Automatic
+
+		column data_fechamento_intervalo = ```
+				
+				/*
+				IF(
+				    'mvp solicitacao_servicos'[data_fechamento] < TODAY(), 
+				    "ANTERIOR A HOJE", 
+				    "HOJE"
+				)
+				*/
+				
+				VAR _hoje = TODAY()
+				VAR _dataFechamento = 'mvp solicitacao_servicos'[data_fechamento]
+				
+				RETURN
+				SWITCH(
+				    TRUE(),
+				    ISBLANK(_dataFechamento), BLANK(),
+				    _dataFechamento = _hoje, "HOJE",
+				    YEAR(_dataFechamento) = YEAR(_hoje) && MONTH(_dataFechamento) = MONTH(_hoje), "MÊS ATUAL",
+				    _dataFechamento < DATE(YEAR(_hoje), MONTH(_hoje), 1), "MESES ANTERIORES",
+				    _dataFechamento > EOMONTH(_hoje, 0), "MÊS FUTURO",
+				    "OUTRO"
+				)
+				```
+			lineageTag: 48345069-dd4b-47e4-9501-769fe0c04dd8
+			summarizeBy: none
+
+			annotation SummarizationSetBy = Automatic
+
+		column data_abertura_mes = ```
+				
+				
+				VAR _data = 'mvp solicitacao_servicos'[data_abertura]
+				VAR _Hoje = TODAY()
+				VAR _PrimeiroDiaDoMes = (DAY(_Hoje) = 1)
+				
+				// Identifica o mês/ano da linha da calendário
+				VAR _AnoMesLinha = YEAR(_data) * 100 + MONTH(_data)
+				
+				// MÊS ATUAL e MÊS ANTERIOR baseados no dia de HOJE
+				VAR _AnoMesAtual = YEAR(_Hoje) * 100 + MONTH(_Hoje)
+				VAR _AnoMesAnterior = YEAR(EDATE(_Hoje, -1)) * 100 + MONTH(EDATE(_Hoje, -1))
+				
+				RETURN
+				    SWITCH(
+				        TRUE(),
+				        -- Se for o 1º dia do mês e a linha for do MÊS ANTERIOR -> Seleção Automática
+				        _PrimeiroDiaDoMes && _AnoMesLinha = _AnoMesAnterior, "MÊS ATUAL",
+				        
+				        -- Se NÃO for o 1º dia do mês e a linha for do MÊS ATUAL -> Seleção Automática
+				        NOT(_PrimeiroDiaDoMes) && _AnoMesLinha = _AnoMesAtual, "MÊS ATUAL",
+				        
+				        -- Mapeamentos explícitos adicionais para permitir consulta manual
+				        _AnoMesLinha = _AnoMesAtual, "MÊS ATUAL",
+				        _AnoMesLinha = _AnoMesAnterior, "MÊS ANTERIOR",
+				        
+				        "Outros"
+				    )
+				```
+			lineageTag: fa95dcad-ed5a-4ce2-8f25-77314ec012d2
+			summarizeBy: none
+
+			annotation SummarizationSetBy = Automatic
+
+		column data_abertura_intervalo = ```
+				
+				IF(
+				    'mvp solicitacao_servicos'[data_abertura] < TODAY(), 
+				    "ANTERIOR A HOJE", 
+				    "HOJE"
+				)
+				```
+			lineageTag: 88f602d0-bbd0-4753-a464-14c7abf98b54
+			summarizeBy: none
+
+			annotation SummarizationSetBy = Automatic
+
 		partition 'mvp solicitacao_servicos' = m
 			mode: import
 			source = ```
@@ -434,11 +546,12 @@ createOrReplace
 					           WHERE
 									tipo_servico IN ('GROSS - ATIV', 'GROSS - REATIV') AND 
 									(
-										data_fechamento >= DATE_TRUNC('month', CURRENT_DATE - INTERVAL '1 month') OR
-										(
+										--data_fechamento >= DATE_TRUNC('month', CURRENT_DATE - INTERVAL '1 month') 
+										data_fechamento >= DATE '2026-01-01' OR data_fechamento IS NULL
+										/*(
 											data_fechamento IS NULL AND
-											status NOT IN ('FINALIZADA', 'FECHAMENTO', 'ENCERRAMENTO')
-										)
+											status NOT IN ('FINALIZADA', 'FECHAMENTO', 'ENCERRAMENTO', 'CANCELADO')
+										)*/
 									)
 									-- AND data_fechamento < CURRENT_DATE) OR (data_fechamento IS NULL)
 					                -- data_fechamento >= '2026-08-01' AND data_fechamento < CURRENT_DATE
