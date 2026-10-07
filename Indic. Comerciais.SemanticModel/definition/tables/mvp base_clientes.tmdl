@@ -376,7 +376,7 @@ table 'mvp base_clientes'
 			        (ISBLANK('mvp base_clientes'[uf]) || 'mvp base_clientes'[uf] = "") && 
 			        DuasPrimeirasLetras IN estadosSSE, DuasPrimeirasLetras,
 			
-			        (ISBLANK('mvp base_clientes'[uf]) || 'mvp base_clientes'[uf] = ""), "SEM INFORMAÇÃO",
+			        --(ISBLANK('mvp base_clientes'[uf]) || 'mvp base_clientes'[uf] = ""), "SEM INFORMAÇÃO",
 			
 			        'mvp base_clientes'[empresa] = "ZAAZ NORDESTE" && NOT('mvp base_clientes'[uf] IN estadosNE), "PB",
 			        'mvp base_clientes'[empresa] = "ZAAZ NORTE" && NOT('mvp base_clientes'[uf] IN estadosNONE), "PA",

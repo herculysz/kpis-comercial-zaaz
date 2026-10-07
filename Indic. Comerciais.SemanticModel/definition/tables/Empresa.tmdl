@@ -1,0 +1,25 @@
+table Empresa
+	lineageTag: 5d2da46a-42c4-4394-a40e-17a282e8db1a
+
+	column empresa
+		lineageTag: 77eeaabb-6b9c-456b-8f8a-48d1591d3144
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: mvp base_clientes[empresa]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Empresa = calculated
+		mode: import
+		source =
+				
+				
+				DISTINCT(
+				    UNION(
+				        VALUES('mvp base_clientes'[empresa]),
+				        VALUES('mvp solicitacao_servicos'[empresa])
+				    )
+				)
+
+	annotation PBI_Id = ed805bdd56794409b7c059ff086d5e33
+

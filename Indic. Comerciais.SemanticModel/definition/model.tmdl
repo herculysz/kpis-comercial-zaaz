@@ -29,6 +29,8 @@ ref table Metas_vendas_bl
 ref table Metas_gross_bl
 ref table Parâmetro_ativação
 ref table Parâmetro_vendas
+ref table Cidades
+ref table Empresa
 
 ref cultureInfo pt-BR
 

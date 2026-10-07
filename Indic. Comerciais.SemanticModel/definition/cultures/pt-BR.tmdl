@@ -9136,6 +9136,501 @@ cultureInfo pt-BR
 			    }
 			  },
 			  "Relationships": {
+			    "mvp_base_cliente_has_data_venda_me": {
+			      "Binding": {
+			        "ConceptualEntity": "mvp base_clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "mvp_base_cliente": {
+			          "Target": {
+			            "Entity": "mvp_base_cliente"
+			          }
+			        },
+			        "mvp_base_cliente.data_venda_me": {
+			          "Target": {
+			            "Entity": "mvp_base_cliente.data_venda_me"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "mvp_base_cliente"
+			            },
+			            "Object": {
+			              "Role": "mvp_base_cliente.data_venda_me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mvp_base_clientes_have_data_venda_me"
+			        }
+			      ]
+			    },
+			    "dim_calendario_has_data_passada_hoje": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_calendario": {
+			          "Target": {
+			            "Entity": "dim_calendario"
+			          }
+			        },
+			        "dim_calendario.data_passada_hoje": {
+			          "Target": {
+			            "Entity": "dim_calendario.data_passada_hoje"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_calendario"
+			            },
+			            "Object": {
+			              "Role": "dim_calendario.data_passada_hoje"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_calendarios_have_data_passada_hojes"
+			        }
+			      ]
+			    },
+			    "medida_has_DU_REAL_Gross": {
+			      "Binding": {
+			        "ConceptualEntity": "Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medida": {
+			          "Target": {
+			            "Entity": "medida"
+			          }
+			        },
+			        "medida.DU_REAL_Gross": {
+			          "Target": {
+			            "Entity": "medida.DU_REAL_Gross"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medida"
+			            },
+			            "Object": {
+			              "Role": "medida.DU_REAL_Gross"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_have_DU_REAL_Gross"
+			        }
+			      ]
+			    },
+			    "medida_has_DU_PLAN_Gross": {
+			      "Binding": {
+			        "ConceptualEntity": "Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medida": {
+			          "Target": {
+			            "Entity": "medida"
+			          }
+			        },
+			        "medida.DU_PLAN_Gross": {
+			          "Target": {
+			            "Entity": "medida.DU_PLAN_Gross"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medida"
+			            },
+			            "Object": {
+			              "Role": "medida.DU_PLAN_Gross"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_have_DU_PLAN_Gross"
+			        }
+			      ]
+			    },
+			    "mvp_solicitacao_servico_has_medida_data_gross_maxmin": {
+			      "Binding": {
+			        "ConceptualEntity": "mvp solicitacao_servicos"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "mvp_solicitacao_servico": {
+			          "Target": {
+			            "Entity": "mvp_solicitacao_servico"
+			          }
+			        },
+			        "medida.data_gross_maxmin": {
+			          "Target": {
+			            "Entity": "medida.data_gross_maxmin"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "mvp_solicitacao_servico"
+			            },
+			            "Object": {
+			              "Role": "medida.data_gross_maxmin"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mvp_solicitacao_servicos_have_data_gross_maxmin"
+			        }
+			      ]
+			    },
+			    "mvp_base_cliente_has_medida_data_venda_maxmin": {
+			      "Binding": {
+			        "ConceptualEntity": "mvp base_clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "mvp_base_cliente": {
+			          "Target": {
+			            "Entity": "mvp_base_cliente"
+			          }
+			        },
+			        "medida.data_venda_maxmin": {
+			          "Target": {
+			            "Entity": "medida.data_venda_maxmin"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "mvp_base_cliente"
+			            },
+			            "Object": {
+			              "Role": "medida.data_venda_maxmin"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mvp_base_clientes_have_data_venda_maxmin"
+			        }
+			      ]
+			    },
+			    "medida_has_cor_txt_dias_estoque_gross": {
+			      "Binding": {
+			        "ConceptualEntity": "Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medida": {
+			          "Target": {
+			            "Entity": "medida"
+			          }
+			        },
+			        "medida.cor_txt_dias_estoque_gross": {
+			          "Target": {
+			            "Entity": "medida.cor_txt_dias_estoque_gross"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medida"
+			            },
+			            "Object": {
+			              "Role": "medida.cor_txt_dias_estoque_gross"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_have_cor_txt_dias_estoque_gross"
+			        }
+			      ]
+			    },
+			    "medida_has_cor_back_dias_estoque_gross": {
+			      "Binding": {
+			        "ConceptualEntity": "Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medida": {
+			          "Target": {
+			            "Entity": "medida"
+			          }
+			        },
+			        "medida.cor_back_dias_estoque_gross": {
+			          "Target": {
+			            "Entity": "medida.cor_back_dias_estoque_gross"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medida"
+			            },
+			            "Object": {
+			              "Role": "medida.cor_back_dias_estoque_gross"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_have_cor_back_dias_estoque_gross"
+			        }
+			      ]
+			    },
+			    "medida_has_cor_txt_cobert_gross_taxa": {
+			      "Binding": {
+			        "ConceptualEntity": "Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medida": {
+			          "Target": {
+			            "Entity": "medida"
+			          }
+			        },
+			        "medida.cor_txt_cobert_gross_taxa": {
+			          "Target": {
+			            "Entity": "medida.cor_txt_cobert_gross_taxa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medida"
+			            },
+			            "Object": {
+			              "Role": "medida.cor_txt_cobert_gross_taxa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_have_cor_txt_cobert_gross_taxa"
+			        }
+			      ]
+			    },
+			    "medida_has_cor_back_cobert_gross_taxa": {
+			      "Binding": {
+			        "ConceptualEntity": "Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medida": {
+			          "Target": {
+			            "Entity": "medida"
+			          }
+			        },
+			        "medida.cor_back_cobert_gross_taxa": {
+			          "Target": {
+			            "Entity": "medida.cor_back_cobert_gross_taxa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medida"
+			            },
+			            "Object": {
+			              "Role": "medida.cor_back_cobert_gross_taxa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_have_cor_back_cobert_gross_taxa"
+			        }
+			      ]
+			    },
+			    "mvp_solicitacao_servico_has_data_abertura_intervalo": {
+			      "Binding": {
+			        "ConceptualEntity": "mvp solicitacao_servicos"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "mvp_solicitacao_servico": {
+			          "Target": {
+			            "Entity": "mvp_solicitacao_servico"
+			          }
+			        },
+			        "mvp_solicitacao_servico.data_abertura_intervalo": {
+			          "Target": {
+			            "Entity": "mvp_solicitacao_servico.data_abertura_intervalo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "mvp_solicitacao_servico"
+			            },
+			            "Object": {
+			              "Role": "mvp_solicitacao_servico.data_abertura_intervalo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mvp_solicitacao_servicos_have_data_abertura_intervalos"
+			        }
+			      ]
+			    },
+			    "mvp_solicitacao_servico_has_data_abertura_me": {
+			      "Binding": {
+			        "ConceptualEntity": "mvp solicitacao_servicos"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "mvp_solicitacao_servico": {
+			          "Target": {
+			            "Entity": "mvp_solicitacao_servico"
+			          }
+			        },
+			        "mvp_solicitacao_servico.data_abertura_me": {
+			          "Target": {
+			            "Entity": "mvp_solicitacao_servico.data_abertura_me"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "mvp_solicitacao_servico"
+			            },
+			            "Object": {
+			              "Role": "mvp_solicitacao_servico.data_abertura_me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mvp_solicitacao_servicos_have_data_abertura_me"
+			        }
+			      ]
+			    },
+			    "mvp_solicitacao_servico_has_data_fechamento_intervalo": {
+			      "Binding": {
+			        "ConceptualEntity": "mvp solicitacao_servicos"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "mvp_solicitacao_servico": {
+			          "Target": {
+			            "Entity": "mvp_solicitacao_servico"
+			          }
+			        },
+			        "mvp_solicitacao_servico.data_fechamento_intervalo": {
+			          "Target": {
+			            "Entity": "mvp_solicitacao_servico.data_fechamento_intervalo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "mvp_solicitacao_servico"
+			            },
+			            "Object": {
+			              "Role": "mvp_solicitacao_servico.data_fechamento_intervalo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mvp_solicitacao_servicos_have_data_fechamento_intervalos"
+			        }
+			      ]
+			    },
+			    "mvp_solicitacao_servico_has_data_fechamento_me": {
+			      "Binding": {
+			        "ConceptualEntity": "mvp solicitacao_servicos"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "mvp_solicitacao_servico": {
+			          "Target": {
+			            "Entity": "mvp_solicitacao_servico"
+			          }
+			        },
+			        "mvp_solicitacao_servico.data_fechamento_me": {
+			          "Target": {
+			            "Entity": "mvp_solicitacao_servico.data_fechamento_me"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "mvp_solicitacao_servico"
+			            },
+			            "Object": {
+			              "Role": "mvp_solicitacao_servico.data_fechamento_me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mvp_solicitacao_servicos_have_data_fechamento_me"
+			        }
+			      ]
+			    },
+			    "medida_has_dias_estoque_gross": {
+			      "Binding": {
+			        "ConceptualEntity": "Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medida": {
+			          "Target": {
+			            "Entity": "medida"
+			          }
+			        },
+			        "medida.dias_estoque_gross": {
+			          "Target": {
+			            "Entity": "medida.dias_estoque_gross"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medida"
+			            },
+			            "Object": {
+			              "Role": "medida.dias_estoque_gross"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_have_dias_estoque_gross"
+			        }
+			      ]
+			    },
 			    "metas_gross_bl_has_meta": {
 			      "Binding": {
 			        "ConceptualEntity": "Metas_gross_bl"
@@ -10222,6 +10717,39 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "mvp_solicitacao_servicos_have_backlog_total_ativ"
+			        }
+			      ]
+			    },
+			    "mvp_base_cliente_has_medida_backlog_total_ativ": {
+			      "Binding": {
+			        "ConceptualEntity": "mvp base_clientes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "mvp_base_cliente": {
+			          "Target": {
+			            "Entity": "mvp_base_cliente"
+			          }
+			        },
+			        "medida.backlog_total_ativ": {
+			          "Target": {
+			            "Entity": "medida.backlog_total_ativ"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "mvp_base_cliente"
+			            },
+			            "Object": {
+			              "Role": "medida.backlog_total_ativ"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mvp_base_clientes_have_backlog_total_ativ"
 			        }
 			      ]
 			    },
@@ -17026,501 +17554,6 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "parâmetro_ativaçãos_have_parâmetro_ativaçãos"
-			        }
-			      ]
-			    },
-			    "medida_has_dias_estoque_gross": {
-			      "Binding": {
-			        "ConceptualEntity": "Medidas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "medida": {
-			          "Target": {
-			            "Entity": "medida"
-			          }
-			        },
-			        "medida.dias_estoque_gross": {
-			          "Target": {
-			            "Entity": "medida.dias_estoque_gross"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "medida"
-			            },
-			            "Object": {
-			              "Role": "medida.dias_estoque_gross"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "medidas_have_dias_estoque_gross"
-			        }
-			      ]
-			    },
-			    "mvp_solicitacao_servico_has_data_fechamento_me": {
-			      "Binding": {
-			        "ConceptualEntity": "mvp solicitacao_servicos"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "mvp_solicitacao_servico": {
-			          "Target": {
-			            "Entity": "mvp_solicitacao_servico"
-			          }
-			        },
-			        "mvp_solicitacao_servico.data_fechamento_me": {
-			          "Target": {
-			            "Entity": "mvp_solicitacao_servico.data_fechamento_me"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "mvp_solicitacao_servico"
-			            },
-			            "Object": {
-			              "Role": "mvp_solicitacao_servico.data_fechamento_me"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "mvp_solicitacao_servicos_have_data_fechamento_me"
-			        }
-			      ]
-			    },
-			    "mvp_solicitacao_servico_has_data_fechamento_intervalo": {
-			      "Binding": {
-			        "ConceptualEntity": "mvp solicitacao_servicos"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "mvp_solicitacao_servico": {
-			          "Target": {
-			            "Entity": "mvp_solicitacao_servico"
-			          }
-			        },
-			        "mvp_solicitacao_servico.data_fechamento_intervalo": {
-			          "Target": {
-			            "Entity": "mvp_solicitacao_servico.data_fechamento_intervalo"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "mvp_solicitacao_servico"
-			            },
-			            "Object": {
-			              "Role": "mvp_solicitacao_servico.data_fechamento_intervalo"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "mvp_solicitacao_servicos_have_data_fechamento_intervalos"
-			        }
-			      ]
-			    },
-			    "mvp_solicitacao_servico_has_data_abertura_me": {
-			      "Binding": {
-			        "ConceptualEntity": "mvp solicitacao_servicos"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "mvp_solicitacao_servico": {
-			          "Target": {
-			            "Entity": "mvp_solicitacao_servico"
-			          }
-			        },
-			        "mvp_solicitacao_servico.data_abertura_me": {
-			          "Target": {
-			            "Entity": "mvp_solicitacao_servico.data_abertura_me"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "mvp_solicitacao_servico"
-			            },
-			            "Object": {
-			              "Role": "mvp_solicitacao_servico.data_abertura_me"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "mvp_solicitacao_servicos_have_data_abertura_me"
-			        }
-			      ]
-			    },
-			    "mvp_solicitacao_servico_has_data_abertura_intervalo": {
-			      "Binding": {
-			        "ConceptualEntity": "mvp solicitacao_servicos"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "mvp_solicitacao_servico": {
-			          "Target": {
-			            "Entity": "mvp_solicitacao_servico"
-			          }
-			        },
-			        "mvp_solicitacao_servico.data_abertura_intervalo": {
-			          "Target": {
-			            "Entity": "mvp_solicitacao_servico.data_abertura_intervalo"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "mvp_solicitacao_servico"
-			            },
-			            "Object": {
-			              "Role": "mvp_solicitacao_servico.data_abertura_intervalo"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "mvp_solicitacao_servicos_have_data_abertura_intervalos"
-			        }
-			      ]
-			    },
-			    "medida_has_cor_back_cobert_gross_taxa": {
-			      "Binding": {
-			        "ConceptualEntity": "Medidas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "medida": {
-			          "Target": {
-			            "Entity": "medida"
-			          }
-			        },
-			        "medida.cor_back_cobert_gross_taxa": {
-			          "Target": {
-			            "Entity": "medida.cor_back_cobert_gross_taxa"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "medida"
-			            },
-			            "Object": {
-			              "Role": "medida.cor_back_cobert_gross_taxa"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "medidas_have_cor_back_cobert_gross_taxa"
-			        }
-			      ]
-			    },
-			    "medida_has_cor_txt_cobert_gross_taxa": {
-			      "Binding": {
-			        "ConceptualEntity": "Medidas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "medida": {
-			          "Target": {
-			            "Entity": "medida"
-			          }
-			        },
-			        "medida.cor_txt_cobert_gross_taxa": {
-			          "Target": {
-			            "Entity": "medida.cor_txt_cobert_gross_taxa"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "medida"
-			            },
-			            "Object": {
-			              "Role": "medida.cor_txt_cobert_gross_taxa"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "medidas_have_cor_txt_cobert_gross_taxa"
-			        }
-			      ]
-			    },
-			    "medida_has_cor_back_dias_estoque_gross": {
-			      "Binding": {
-			        "ConceptualEntity": "Medidas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "medida": {
-			          "Target": {
-			            "Entity": "medida"
-			          }
-			        },
-			        "medida.cor_back_dias_estoque_gross": {
-			          "Target": {
-			            "Entity": "medida.cor_back_dias_estoque_gross"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "medida"
-			            },
-			            "Object": {
-			              "Role": "medida.cor_back_dias_estoque_gross"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "medidas_have_cor_back_dias_estoque_gross"
-			        }
-			      ]
-			    },
-			    "medida_has_cor_txt_dias_estoque_gross": {
-			      "Binding": {
-			        "ConceptualEntity": "Medidas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "medida": {
-			          "Target": {
-			            "Entity": "medida"
-			          }
-			        },
-			        "medida.cor_txt_dias_estoque_gross": {
-			          "Target": {
-			            "Entity": "medida.cor_txt_dias_estoque_gross"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "medida"
-			            },
-			            "Object": {
-			              "Role": "medida.cor_txt_dias_estoque_gross"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "medidas_have_cor_txt_dias_estoque_gross"
-			        }
-			      ]
-			    },
-			    "mvp_base_cliente_has_medida_data_venda_maxmin": {
-			      "Binding": {
-			        "ConceptualEntity": "mvp base_clientes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "mvp_base_cliente": {
-			          "Target": {
-			            "Entity": "mvp_base_cliente"
-			          }
-			        },
-			        "medida.data_venda_maxmin": {
-			          "Target": {
-			            "Entity": "medida.data_venda_maxmin"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "mvp_base_cliente"
-			            },
-			            "Object": {
-			              "Role": "medida.data_venda_maxmin"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "mvp_base_clientes_have_data_venda_maxmin"
-			        }
-			      ]
-			    },
-			    "mvp_solicitacao_servico_has_medida_data_gross_maxmin": {
-			      "Binding": {
-			        "ConceptualEntity": "mvp solicitacao_servicos"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "mvp_solicitacao_servico": {
-			          "Target": {
-			            "Entity": "mvp_solicitacao_servico"
-			          }
-			        },
-			        "medida.data_gross_maxmin": {
-			          "Target": {
-			            "Entity": "medida.data_gross_maxmin"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "mvp_solicitacao_servico"
-			            },
-			            "Object": {
-			              "Role": "medida.data_gross_maxmin"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "mvp_solicitacao_servicos_have_data_gross_maxmin"
-			        }
-			      ]
-			    },
-			    "medida_has_DU_PLAN_Gross": {
-			      "Binding": {
-			        "ConceptualEntity": "Medidas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "medida": {
-			          "Target": {
-			            "Entity": "medida"
-			          }
-			        },
-			        "medida.DU_PLAN_Gross": {
-			          "Target": {
-			            "Entity": "medida.DU_PLAN_Gross"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "medida"
-			            },
-			            "Object": {
-			              "Role": "medida.DU_PLAN_Gross"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "medidas_have_DU_PLAN_Gross"
-			        }
-			      ]
-			    },
-			    "medida_has_DU_REAL_Gross": {
-			      "Binding": {
-			        "ConceptualEntity": "Medidas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "medida": {
-			          "Target": {
-			            "Entity": "medida"
-			          }
-			        },
-			        "medida.DU_REAL_Gross": {
-			          "Target": {
-			            "Entity": "medida.DU_REAL_Gross"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "medida"
-			            },
-			            "Object": {
-			              "Role": "medida.DU_REAL_Gross"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "medidas_have_DU_REAL_Gross"
-			        }
-			      ]
-			    },
-			    "dim_calendario_has_data_passada_hoje": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_calendario"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_calendario": {
-			          "Target": {
-			            "Entity": "dim_calendario"
-			          }
-			        },
-			        "dim_calendario.data_passada_hoje": {
-			          "Target": {
-			            "Entity": "dim_calendario.data_passada_hoje"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_calendario"
-			            },
-			            "Object": {
-			              "Role": "dim_calendario.data_passada_hoje"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_calendarios_have_data_passada_hojes"
-			        }
-			      ]
-			    },
-			    "mvp_base_cliente_has_data_venda_me": {
-			      "Binding": {
-			        "ConceptualEntity": "mvp base_clientes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "mvp_base_cliente": {
-			          "Target": {
-			            "Entity": "mvp_base_cliente"
-			          }
-			        },
-			        "mvp_base_cliente.data_venda_me": {
-			          "Target": {
-			            "Entity": "mvp_base_cliente.data_venda_me"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "mvp_base_cliente"
-			            },
-			            "Object": {
-			              "Role": "mvp_base_cliente.data_venda_me"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "mvp_base_clientes_have_data_venda_me"
 			        }
 			      ]
 			    },

@@ -12,3 +12,19 @@ relationship 9383411b-b9b7-5133-e500-44beb0ac375f
 	fromColumn: 'mvp solicitacao_servicos'.data_abertura
 	toColumn: dim_calendario.data
 
+relationship 1f221af6-b18f-4e97-fc28-b8a73bc6e611
+	fromColumn: 'mvp base_clientes'.ajuste_cidade
+	toColumn: Cidades.ajuste_cidade
+
+relationship 302ad724-b60b-a65e-e6d7-7f983b3f18ec
+	fromColumn: 'mvp solicitacao_servicos'.cidade
+	toColumn: Cidades.ajuste_cidade
+
+relationship 17fbe664-12dc-9f3d-2528-3b12710c4c55
+	fromColumn: 'mvp base_clientes'.empresa
+	toColumn: Empresa.empresa
+
+relationship 2bbc7d11-49c3-b071-c9d6-fddd1f5b7afb
+	fromColumn: 'mvp solicitacao_servicos'.empresa
+	toColumn: Empresa.empresa
+

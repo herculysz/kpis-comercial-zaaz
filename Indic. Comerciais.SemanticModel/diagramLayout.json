@@ -5,7 +5,7 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 103.19251336898397
+        "y": 328.64572192513373
       },
       "nodes": [
         {
@@ -119,6 +119,32 @@
           "nodeLineageTag": "ca79c3dd-6330-4152-a89a-7362b496e887",
           "size": {
             "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 952.86764705882342,
+            "y": 663.58842577568339
+          },
+          "nodeIndex": "Cidades",
+          "nodeLineageTag": "352a09c9-bacb-469a-a988-98e4fd7f83fa",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 853.04010695187139,
+            "y": 892.40660759386515
+          },
+          "nodeIndex": "Empresa",
+          "nodeLineageTag": "5d2da46a-42c4-4394-a40e-17a282e8db1a",
+          "size": {
+            "height": 200,
             "width": 234
           },
           "zIndex": 0

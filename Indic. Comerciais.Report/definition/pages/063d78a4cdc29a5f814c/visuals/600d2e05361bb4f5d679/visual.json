@@ -20,13 +20,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "mvp base_clientes"
+                      "Entity": "Empresa"
                     }
                   },
                   "Property": "empresa"
                 }
               },
-              "queryRef": "mvp base_clientes.empresa",
+              "queryRef": "Empresa.empresa",
               "nativeQueryRef": "empresa",
               "active": true
             }
@@ -63,15 +63,7 @@
       ],
       "general": [
         {
-          "properties": {
-            "selfFilterEnabled": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
+          "properties": {}
         }
       ],
       "items": [
@@ -123,7 +115,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'REGIÃO DE VENDA'"
+                  "Value": "'REGIÃO'"
                 }
               }
             },

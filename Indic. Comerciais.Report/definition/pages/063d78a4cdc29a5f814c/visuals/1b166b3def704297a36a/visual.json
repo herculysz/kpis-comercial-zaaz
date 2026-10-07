@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
-  "name": "c56f08fdbce10a803470",
+  "name": "1b166b3def704297a36a",
   "position": {
-    "x": 27.5,
-    "y": 232.5,
-    "z": 24000,
+    "x": 25.445026178010473,
+    "y": 219.10994764397907,
+    "z": 24006,
     "height": 56.38766519823789,
     "width": 200.17621145374449,
-    "tabOrder": 24000
+    "tabOrder": 24006
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "mvp solicitacao_servicos"
+                      "Entity": "Cidades"
                     }
                   },
-                  "Property": "empresa"
+                  "Property": "ajuste_cidade"
                 }
               },
-              "queryRef": "mvp solicitacao_servicos.empresa",
-              "nativeQueryRef": "empresa",
+              "queryRef": "Cidades.ajuste_cidade",
+              "nativeQueryRef": "ajuste_cidade",
               "active": true
             }
           ]
@@ -69,6 +69,44 @@
                 "Literal": {
                   "Value": "true"
                 }
+              }
+            },
+            "selfFilter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "c",
+                    "Entity": "Cidades",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Contains": {
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "c"
+                              }
+                            },
+                            "Property": "ajuste_cidade"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'queima'"
+                          }
+                        }
+                      }
+                    },
+                    "Annotations": {
+                      "PowerBI.MParameterBehavior": 1
+                    }
+                  }
+                ]
               }
             }
           }
@@ -123,7 +161,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'REGIÃO DE ATIVAÇÃO'"
+                  "Value": "'CIDADE'"
                 }
               }
             },

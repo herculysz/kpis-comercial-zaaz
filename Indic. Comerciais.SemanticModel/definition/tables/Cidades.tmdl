@@ -1,0 +1,25 @@
+table Cidades
+	lineageTag: 352a09c9-bacb-469a-a988-98e4fd7f83fa
+
+	column ajuste_cidade
+		lineageTag: 74842dea-078f-4b07-b5cd-b21e40ed3a98
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: mvp base_clientes[ajuste_cidade]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Cidades = calculated
+		mode: import
+		source =
+				
+				
+				DISTINCT(
+				    UNION(
+				        VALUES('mvp base_clientes'[ajuste_cidade]),
+				        VALUES('mvp solicitacao_servicos'[cidade])
+				    )
+				)
+
+	annotation PBI_Id = 4fbf25d7041f4cd69667426c757d5ad2
+
